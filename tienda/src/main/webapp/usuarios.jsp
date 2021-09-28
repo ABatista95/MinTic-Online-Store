@@ -6,6 +6,8 @@
 	<meta charset="ISO-8859-1">
 	<title>Usuarios</title>
 	
+	<link href="/CSS/Usuarios.css" rel="stylesheet" type="text/css">
+	
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var usuarios = $.ajax({
@@ -62,5 +64,22 @@
 		
 		</tbody>
 	</table>
+	
+	<form>
+	 	<div class="one-half"><label>Cédula:</label>
+	    <input style= " margin:8px 80px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula"></div>
+	
+	    <div class="one-half last"><label>Usuario:</label>
+	    <input style= " margin:8px 27px" type="text" id="Usuario" name="Usuario" placeholder= "Ingrese su usuario"></div>
+	
+	    <div class="one-half"><label>Nombre Completo:</label>
+	    <input style= " margin:8px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+	
+	    <div class="one-half last"><label>Contraseña:</label>
+	    <input style= " margin:8px" type="text" id="Contraseña" name="Contraseña"></div>
+	
+	    <div class="one-half"><label>Correo electrónico:</label>
+	    <input style= " margin:8px; padding 20px" type="text" id="Correo" name="Correo electrónico"size="40"></div>
+	</form>
 </body>
 </html>
