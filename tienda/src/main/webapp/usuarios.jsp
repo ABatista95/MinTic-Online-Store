@@ -7,7 +7,7 @@
 	<title>Usuarios</title>
 	
 	<link href="/CSS/Usuarios.css" rel="stylesheet" type="text/css">
-	
+	<!-- COMENTARIO DE FELIPE -->
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var usuarios = $.ajax({
