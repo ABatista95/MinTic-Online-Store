@@ -52,23 +52,23 @@ https://templatemo.com/tm-534-parallo
                   <ul class="navbar-nav">
                     <li class="nav-item">
                       <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="ventas.html">Ventas</a>
+                      <a class="nav-link" href="ventas.jsp">Ventas</a>
                     </li>
                     <li class="nav-item">
                       <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="clientes.html">Clientes</a>
+                      <a class="nav-link" href="clientes.jsp">Clientes</a>
                     </li>
                     <li class="nav-item">
                       <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="proveedores.html">Proveedores</a>
+                      <a class="nav-link" href="proveedores.jsp">Proveedores</a>
                     </li>
                     <li class="nav-item">
                       <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="productos.html">Productos</a>
+                      <a class="nav-link" href="productos.jsp">Productos</a>
                     </li>
                     <li class="nav-item">
                       <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="usuarios.html">Usuarios</a>
+                      <a class="nav-link" href="usuarios.jsp">Usuarios</a>
                     </li>
                     <li class="nav-item green-highlight active">
                       <div class="tm-nav-link-highlight"></div>

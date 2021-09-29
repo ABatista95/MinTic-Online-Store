@@ -29,7 +29,7 @@
 	    </div>
 	
 	    <!-- Login Form -->
-	    <form action="menu.jsp">
+	    <form action="ventas.jsp">
 	      <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario">
 	      <input type="password" id="password" class="fadeIn third" name="login" placeholder="contraseña">
 	      <input type="submit" class="fadeIn fourth" value="Iniciar">
