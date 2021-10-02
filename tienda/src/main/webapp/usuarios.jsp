@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Parallo - App Landing Page</title>
+    <title>USUARIOS | Menu</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
@@ -125,7 +125,6 @@ https://templatemo.com/tm-534-parallo
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box">
                       <div class="tm-app-feature-description-box">
-                          <p>Lista de información de los productos</p>
                           <a href = "agregarUsuario">Agregar Usuario</a>
                           <table id ="tabla">
                             <thead>
@@ -133,7 +132,7 @@ https://templatemo.com/tm-534-parallo
                                 <th>Cedula</th>
                                 <th>Correo</th>
                                 <th>Nombre</th>
-                                <th>Contraseña</th>
+                                <th>Contrase�a</th>
                                 <th>Usuario</th>
                                 <th>Eliminar</th>
                                 <th>Editar</th>
@@ -145,19 +144,20 @@ https://templatemo.com/tm-534-parallo
                           </table>
 
                           <form>
-                            <div class="one-half"><label>Cédula:</label>
-                             <input style= " margin:8px 80px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula"></div>
+                          	 <br/>
+                            <div class="one-half"><label>C�dula:</label>                            
+                             <input style= " margin:8px 30px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de c�dula"></div>
                          
                              <div class="one-half last"><label>Usuario:</label>
-                             <input style= " margin:8px 27px" type="text" id="Usuario" name="Usuario" placeholder= "Ingrese su usuario"></div>
+                             <input style= " margin:8px 30px" type="text" id="Usuario" name="Usuario" placeholder= "Ingrese su usuario"></div>
                          
                              <div class="one-half"><label>Nombre Completo:</label>
                              <input style= " margin:8px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
                          
-                             <div class="one-half last"><label>Contraseña:</label>
+                             <div class="one-half last"><label>Contrase�a:</label>
                              <input style= " margin:8px" type="text" id="Contraseña" name="Contraseña"></div>
                          
-                             <div class="one-half"><label>Correo electrónico:</label>
+                             <div class="one-half"><label>Correo electronico:</label>
                              <input style= " margin:8px; padding 20px" type="text" id="Correo" name="Correo electrónico"size="40"></div>
                          </form>
                       </div>

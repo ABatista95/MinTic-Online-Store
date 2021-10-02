@@ -3,10 +3,10 @@ package com.tienda.DAO;
 import java.sql.*;
 public class Conexion {
 	
-	static String bd = "tienda";
-    static String login = "root";
-    static String password = "Proyectomintic1*";
-    static String url = "jdbc:mysql://localhost/"+bd;
+	static String bd = "grupo37_equipo5";
+    static String login = "admin";
+    static String password = "Admin123$";
+    static String url = "jdbc:mysql://camiloc2.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+bd;
 
     
     Connection connection = null;

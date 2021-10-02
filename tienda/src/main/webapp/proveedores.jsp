@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Parallo - Testimonials</title>
+    <title>PROVEEDORES | Menu</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
@@ -30,7 +30,7 @@ https://templatemo.com/tm-534-parallo
             <div class="tm-brand-container tm-bg-white-transparent">
               <i class="bi bi-cart3 fa-2x fa-pen tm-brand-icon"></i>
               <div class="tm-brand-texts">
-                <h1 class="text-uppercase tm-brand-name">TU TIENDA</h1>
+                <h1 class="text-uppercase tm-brand-name">TU TIENDA-</h1>
                 <p class="small">Todo lo que necesitas</p>
               </div>
             </div>
@@ -93,7 +93,38 @@ https://templatemo.com/tm-534-parallo
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box">
                       <div class="tm-app-feature-description-box">
-                          <p>Lista de informaciÃ³n de los CLIENTES</p>
+                          <a href = "agregarUsuario">Agregar Proveedor</a>
+                          <table id ="tabla">
+                            <thead>
+                              <tr>
+                                <th>NIT_Proveedor</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Dirección</th>
+                                <th>Ciudad</th>
+                              </tr>	
+                            </thead>
+                            <tbody id = "myTable">
+                            
+                            </tbody>
+                          </table>
+
+                          <form>
+                            <div class="one-half"><label>NIT Proveedor:</label>
+                             <input style= " margin:8px 50px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de NIT"></div>
+                         
+                             <div class="one-half last"><label>Nombre Completo:</label>
+                             <input style= " margin:8px 15px" type="text" id="Usuario" name="Usuario" placeholder= "Nombre y apellidos"></div>
+                         
+                             <div class="one-half"><label>Télefono:</label>
+                             <input style= " margin:8px 100px" type="text" id="Nombre" name="Nombre" size="30" placeholder="télefono de contacto"></div>
+                         
+                             <div class="one-half last"><label>Dirección:</label>
+                             <input style= " margin:8px 95px" type="text" id="ContraseÃ±a" name="Contraseña" placeholder="Dirección"></div>
+                         
+                             <div class="one-half"><label>Ciudad:</label>
+                             <input style= " margin:8px 115px; padding 20px" type="text" id="Correo" name="Correo electronico" size="40" placeholder="Ciudad"></div>
+                         </form>
                       </div>
                   </div>
               </div>
@@ -108,7 +139,7 @@ https://templatemo.com/tm-534-parallo
                       </div>
                   </div>
               </div>
-          </div>        
+          </div>               
       </section>
 
         <!-- Testimonials header -->
