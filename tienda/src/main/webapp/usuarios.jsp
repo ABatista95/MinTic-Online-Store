@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
 
-    <!-- ImportaciÃ³n de iconos -->
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -35,10 +36,10 @@
             columna4.innerHTML = item.password;
             var columna5 = document.createElement("td");
             columna5.innerHTML = item.usuario;
-            var columna6 = document.createElement("td");
-            columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
+            var columna6 = document.createElement("td");            
+            columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"' class='btn btn-danger'>Eliminar</a>";
             var columna7 = document.createElement("td");
-            columna7.innerHTML = "<a href = 'editar.jsp?cedula="+item.cedulaUsuario+"'>Editar</a>";;
+            columna7.innerHTML = "<a href = 'editar.jsp?cedula="+item.cedulaUsuario+"' class='btn btn-primary'>Editar</a>";;
             
             lista.appendChild(tr);
             tr.appendChild(columna1);
@@ -116,83 +117,62 @@ https://templatemo.com/tm-534-parallo
         <!-- Lista Datos -->
         <section id="tmAppFeatures">
           <div class="row">
-              <header class="col-12 text-center text-white tm-bg-black-transparent p-5 tm-app-header">
-                  <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE USUARIOS</h2>
+              <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
+                  <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTA DE USUARIOS</h2>
               </header>
           </div>
 
           <div class="row">
               <div class="col-lg-12">
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                          <a href = "agregarUsuario">Agregar Usuario</a>
-                          <table id ="tabla">
-                            <thead>
-                              <tr>
-                                <th>Cedula</th>
-                                <th>Correo</th>
-                                <th>Nombre</th>
-                                <th>Contraseña</th>
-                                <th>Usuario</th>
-                                <th>Eliminar</th>
-                                <th>Editar</th>
-                              </tr>	
-                            </thead>
-                            <tbody id = "myTable">
-                            
-                            </tbody>
-                          </table>
-
-                          <form>
-                          	 <br/>
-                            <div class="one-half"><label>Cédula:</label>                            
-                             <input style= " margin:8px 30px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula"></div>
-                         
-                             <div class="one-half last"><label>Usuario:</label>
-                             <input style= " margin:8px 30px" type="text" id="Usuario" name="Usuario" placeholder= "Ingrese su usuario"></div>
-                         
-                             <div class="one-half"><label>Nombre Completo:</label>
-                             <input style= " margin:8px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
-                         
-                             <div class="one-half last"><label>Contraseña:</label>
-                             <input style= " margin:8px" type="text" id="ContraseÃ±a" name="ContraseÃ±a"></div>
-                         
-                             <div class="one-half"><label>Correo electronico:</label>
-                             <input style= " margin:8px; padding 20px" type="text" id="Correo" name="Correo electrÃ³nico"size="40"></div>
-                         </form>
+                  <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                      <div class="col-lg-4">
+                       <form>
+                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+                       	 <br/>
+                         <div class="one-half"><label>Cédula:</label> <br>                      
+                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula" size="30"></div>
+                      
+                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+                          
+                          <div class="one-half"><label>Correo electronico:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Correo" name="Correo electronico" placeholder="Email" size="30"></div>
+                          
+                          <div class="one-half last"><label>Usuario:</label> <br>
+                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
+                                                                     
+                          <div class="one-half last"><label>Contraseña:</label> <br>
+                          <input style= " margin:0px" type="text" id="Contraseña" name="Contraseña" placeholder="Contraseña" size="30"></div>
+                          
+                          <div class="one-half last">
+                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" value="AGREGAR"/>
+                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" value="ACTUALIZAR"/></div>  
+                                            
+                      </form>
                       </div>
-                  </div>
-              </div>
-
-              <div class="col-lg-12" >
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                        <a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
+                      
+                      <div class="col-lg-8">
+                        <table id ="table" class="col-lg-12">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Cedula</th>
+                              <th scope="col">Correo</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Contraseña</th>
+                              <th scope="col">Usuario</th>
+                              <th scope="col">Eliminar</th>
+                              <th scope="col">Editar</th>
+                            </tr>	
+                          </thead>
+                          <tbody id = "myTable">
+                          
+                          </tbody>
+                        </table>
                       </div>
                   </div>
               </div>
           </div>        
       </section>
-
-        <section class="row" id="tmHome">
-          <div class="col-12 tm-home-container">
-            <div class="text-white tm-home-left">
-              <p class="text-uppercase tm-slogan">We can develop</p>
-              <hr class="tm-home-hr" />
-              <h2 class="tm-home-title">Mobile App for Your Business</h2>
-              <p class="tm-home-text">
-                Parallo is a landing page template based on Bootstrap v4.3.1 framework. Please tell your friends about TemplateMo. Thank you.
-              </p>
-              <a href="#tmFeatures" class="btn btn-primary">Learn More</a>
-            </div>
-            <div class="tm-home-right">
-              <img src="img/mobile-screen.png" alt="App on Mobile mockup" />
-            </div>
-          </div>
-        </section>
 
         <!-- Features -->
         <div class="row" id="tmFeatures">

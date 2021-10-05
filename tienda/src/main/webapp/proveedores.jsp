@@ -109,7 +109,7 @@ https://templatemo.com/tm-534-parallo
                             </tbody>
                           </table>
 
-                          <form>
+                          <form method="get" action="./DemoServlet">
                             <div class="one-half"><label>NIT Proveedor:</label>
                              <input style= " margin:8px 50px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de NIT"></div>
                          
@@ -132,10 +132,13 @@ https://templatemo.com/tm-534-parallo
               <div class="col-lg-12" >
                   <div class="tm-bg-white-transparent tm-app-feature-box">
                       <div class="tm-app-feature-description-box">
-                        <a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
+                      	<form method="get" action=".DemoServlet">
+                      		<input type="submit" value=""></td> 
+                      		<a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
+	                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
+	                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
+	                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
+                      	</form>                       
                       </div>
                   </div>
               </div>
