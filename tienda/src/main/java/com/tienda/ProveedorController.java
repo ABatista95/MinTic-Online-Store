@@ -28,9 +28,9 @@ public class ProveedorController {
     @RequestMapping("/listarProveedores")
     public ArrayList< ProveedorDTO> listaDeProveedores() {
     	ProveedorDAO Dao=new ProveedorDAO();  
-        return Dao.listaDeProveedores();
-        
+        return Dao.listaDeProveedores();   
     }
+    
 
     @RequestMapping("/eliminarProveedor")
     public void eliminarProveedor(int nit) {

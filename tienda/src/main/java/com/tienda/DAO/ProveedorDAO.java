@@ -4,9 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import com.tienda.DTO.ProveedorDTO;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 
 public class ProveedorDAO {
@@ -31,7 +28,7 @@ public class ProveedorDAO {
     }
 	
 	public ArrayList<ProveedorDTO> consultarProveedor(int nit) {
-        ArrayList< ProveedorDTO> miProveedor = new ArrayList< ProveedorDTO>();
+        ArrayList< ProveedorDTO> miProveedor = new ArrayList<ProveedorDTO>();
         Conexion conex= new Conexion();
           
         try {

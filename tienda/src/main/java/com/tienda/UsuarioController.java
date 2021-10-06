@@ -2,7 +2,6 @@ package com.tienda;
 
 import java.util.ArrayList;
 
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +29,6 @@ public class UsuarioController {
     public ArrayList< UsuarioDTO> listaDeUsuarios() {
         UsuarioDAO Dao=new UsuarioDAO();  
         return Dao.listaDeUsuarios();
-        
     }
 
     @RequestMapping("/eliminarUsuario")
