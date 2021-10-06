@@ -15,10 +15,10 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
     
-    <!-- Importación de iconos -->
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     
-    <!-- Importacion de iconos -->
+    <!-- Importacion de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 
@@ -145,13 +145,13 @@ https://templatemo.com/tm-534-parallo
                       	  <div class="one-half"><label>Nombre Completo:</label> <br>
                           <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
                           
-                          <div class="one-half"><label>Dirección:</label> <br>
-                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Dirección empresa" size="30"></div>
+                          <div class="one-half"><label>Direccion:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcciï¿½n empresa" size="30"></div>
                           
                           <div class="one-half last"><label>Ciudad:</label> <br>
                           <input style= " margin:0px" type="text" id="Ciudad" name="Ciudad" placeholder= "Ciudad" size="30"></div>
                                                                      
-                          <div class="one-half last"><label>Telefóno contacto:</label> <br>
+                          <div class="one-half last"><label>Telefono contacto:</label> <br>
                           <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Contacto" size="30"></div>
                           
                           <div class="one-half last">
@@ -167,7 +167,7 @@ https://templatemo.com/tm-534-parallo
                             <tr>
                               <th scope="col">Nit-Proveedor</th>
                               <th scope="col">Nombre</th>
-                              <th scope="col">Dirección</th>
+                              <th scope="col">Direccion</th>
                               <th scope="col">Ciudad</th>
                               <th scope="col">Contacto</th>
                               <th scope="col">Eliminar</th>

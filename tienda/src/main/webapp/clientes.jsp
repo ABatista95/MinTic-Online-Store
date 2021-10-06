@@ -13,8 +13,14 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
 
-    <!-- Importación de iconos -->
+      <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 <!--
 Parallo Template
@@ -83,32 +89,63 @@ https://templatemo.com/tm-534-parallo
         <!-- Lista Datos -->
         <section id="tmAppFeatures">
           <div class="row">
-              <header class="col-12 text-center text-white tm-bg-black-transparent p-5 tm-app-header">
-                  <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE CLIENTES</h2>
+              <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
+                  <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTA DE CLIENTES</h2>
               </header>
           </div>
 
           <div class="row">
               <div class="col-lg-12">
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                          <p>Lista de información de los CLIENTES</p>
+                  <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                      <div class="col-lg-4">
+                       <form>
+                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+                       	 <br/>
+                         <div class="one-half"><label>Nit Proveedor</label> <br>                      
+                          <input style= " margin:0px" type="text" id="NitProveedor" name="Nit Proveedor" placeholder= "Nit de Proveedor" size="30"></div>
+                      
+                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+                          
+                          <div class="one-half"><label>Direccion:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcci�n empresa" size="30"></div>
+                          
+                          <div class="one-half last"><label>Ciudad:</label> <br>
+                          <input style= " margin:0px" type="text" id="Ciudad" name="Ciudad" placeholder= "Ciudad" size="30"></div>
+                                                                     
+                          <div class="one-half last"><label>Telefono contacto:</label> <br>
+                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Contacto" size="30"></div>
+                          
+                          <div class="one-half last">
+                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" value="AGREGAR"/>
+                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" value="ACTUALIZAR"/></div>  
+                                            
+                      </form>
                       </div>
-                  </div>
-              </div>
-
-              <div class="col-lg-12" >
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                        <a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
+                      
+                      <div class="col-lg-8">
+                        <table id ="table" class="col-lg-12">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Nit-Proveedor</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Direccion</th>
+                              <th scope="col">Ciudad</th>
+                              <th scope="col">Contacto</th>
+                              <th scope="col">Eliminar</th>
+                              <th scope="col">Editar</th>
+                            </tr>	
+                          </thead>
+                          <tbody id = "myTable">
+                          
+                          </tbody>
+                        </table>
                       </div>
                   </div>
               </div>
           </div>        
       </section>
+
 
         <!-- Services header -->
         <section class="row" id="tmServices">
