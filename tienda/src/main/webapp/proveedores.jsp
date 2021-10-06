@@ -15,8 +15,51 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
     
-    <!-- ImportaciÃ³n de iconos -->
+    <!-- Importación de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Consulta de base de datos -->
+    <script>
+      var proveedores = $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/listarProveedores",
+        success: function(data){
+          $.each(data, function(i, item){
+            lista = document.getElementById("myTable");
+            var tr = document.createElement("tr");
+            var columna1 = document.createElement("td");
+            columna1.innerHTML = item.nitProveedor;
+            var columna2 = document.createElement("td");
+            columna2.innerHTML = item.nombreProveedor;
+            var columna3 = document.createElement("td");
+            columna3.innerHTML = item.direccionProveedor;
+            var columna4 = document.createElement("td");
+            columna4.innerHTML = item.ciudadProveedor;
+            var columna5 = document.createElement("td");
+            columna5.innerHTML = item.celularProveedor;
+            var columna6 = document.createElement("td");            
+            columna6.innerHTML = "<a href = 'eliminarProveedor?NitProveedor="+item.nitProveedor+"' class='btn btn-danger'>Eliminar</a>";
+            var columna7 = document.createElement("td");
+            columna7.innerHTML = "<a href = 'proveedores.jsp?NitProveedor="+item.nitProveedor+"' class='btn btn-primary'>Editar</a>";;
+            
+            lista.appendChild(tr);
+            tr.appendChild(columna1);
+            tr.appendChild(columna2);
+            tr.appendChild(columna3);
+            tr.appendChild(columna4);
+            tr.appendChild(columna5);
+            tr.appendChild(columna6);
+            tr.appendChild(columna7);
+          });
+        }
+      })
+    </script>
   </head>
 <!--
 Parallo Template
@@ -30,7 +73,7 @@ https://templatemo.com/tm-534-parallo
             <div class="tm-brand-container tm-bg-white-transparent">
               <i class="bi bi-cart3 fa-2x fa-pen tm-brand-icon"></i>
               <div class="tm-brand-texts">
-                <h1 class="text-uppercase tm-brand-name">TU TIENDA-</h1>
+                <h1 class="text-uppercase tm-brand-name">TU TIENDA</h1>
                 <p class="small">Todo lo que necesitas</p>
               </div>
             </div>
@@ -81,87 +124,66 @@ https://templatemo.com/tm-534-parallo
           </div>
         </div>
 
-         <!-- Lista Datos -->
-         <section id="tmAppFeatures">
+          <!-- Lista Datos -->
+        <section id="tmAppFeatures">
           <div class="row">
-              <header class="col-12 text-center text-white tm-bg-black-transparent p-5 tm-app-header">
-                  <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE PROVEEDORES</h2>
+              <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
+                  <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTA DE PROVEEDORES</h2>
               </header>
           </div>
 
           <div class="row">
               <div class="col-lg-12">
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                          <a href = "agregarUsuario">Agregar Proveedor</a>
-                          <table id ="tabla">
-                            <thead>
-                              <tr>
-                                <th>NIT_Proveedor</th>
-                                <th>Nombre</th>
-                                <th>Telefono</th>
-                                <th>Dirección</th>
-                                <th>Ciudad</th>
-                              </tr>	
-                            </thead>
-                            <tbody id = "myTable">
-                            
-                            </tbody>
-                          </table>
-
-                          <form method="get" action="./DemoServlet">
-                            <div class="one-half"><label>NIT Proveedor:</label>
-                             <input style= " margin:8px 50px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de NIT"></div>
-                         
-                             <div class="one-half last"><label>Nombre Completo:</label>
-                             <input style= " margin:8px 15px" type="text" id="Usuario" name="Usuario" placeholder= "Nombre y apellidos"></div>
-                         
-                             <div class="one-half"><label>Télefono:</label>
-                             <input style= " margin:8px 100px" type="text" id="Nombre" name="Nombre" size="30" placeholder="télefono de contacto"></div>
-                         
-                             <div class="one-half last"><label>Dirección:</label>
-                             <input style= " margin:8px 95px" type="text" id="ContraseÃ±a" name="Contraseña" placeholder="Dirección"></div>
-                         
-                             <div class="one-half"><label>Ciudad:</label>
-                             <input style= " margin:8px 115px; padding 20px" type="text" id="Correo" name="Correo electronico" size="40" placeholder="Ciudad"></div>
-                         </form>
+                  <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                      <div class="col-lg-4">
+                       <form>
+                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+                       	 <br/>
+                         <div class="one-half"><label>Nit Proveedor</label> <br>                      
+                          <input style= " margin:0px" type="text" id="NitProveedor" name="Nit Proveedor" placeholder= "Nit de Proveedor" size="30"></div>
+                      
+                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+                          
+                          <div class="one-half"><label>Dirección:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Dirección empresa" size="30"></div>
+                          
+                          <div class="one-half last"><label>Ciudad:</label> <br>
+                          <input style= " margin:0px" type="text" id="Ciudad" name="Ciudad" placeholder= "Ciudad" size="30"></div>
+                                                                     
+                          <div class="one-half last"><label>Telefóno contacto:</label> <br>
+                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Contacto" size="30"></div>
+                          
+                          <div class="one-half last">
+                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" value="AGREGAR"/>
+                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" value="ACTUALIZAR"/></div>  
+                                            
+                      </form>
+                      </div>
+                      
+                      <div class="col-lg-8">
+                        <table id ="table" class="col-lg-12">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Nit-Proveedor</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Dirección</th>
+                              <th scope="col">Ciudad</th>
+                              <th scope="col">Contacto</th>
+                              <th scope="col">Eliminar</th>
+                              <th scope="col">Editar</th>
+                            </tr>	
+                          </thead>
+                          <tbody id = "myTable">
+                          
+                          </tbody>
+                        </table>
                       </div>
                   </div>
               </div>
-
-              <div class="col-lg-12" >
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                      	<form method="get" action=".DemoServlet">
-                      		<input type="submit" value=""></td> 
-                      		<a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
-	                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
-	                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
-	                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
-                      	</form>                       
-                      </div>
-                  </div>
-              </div>
-          </div>               
+          </div>        
       </section>
 
-        <!-- Testimonials header -->
-        <section class="row" id="tmServices">
-          <div class="col-12">
-            <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header"
-                 data-parallax="scroll"
-                 data-z-index="101"
-                 data-image-src="img/ice-mountain.jpg">
-
-                 <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
-                    <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Testimonials</h2>
-                    <p class="tm-services-description mb-0 small">
-                        Parallax movement background page ice mountain for testimonials.   
-                    </p>
-                </div>
-            </div>
-          </div>   
-        </section>
 
         <section class="row tm-testimonials-section">
             <div class="col-12 tm-carousel">              

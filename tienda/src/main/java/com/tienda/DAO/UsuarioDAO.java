@@ -2,9 +2,7 @@ package com.tienda.DAO;
 
 import java.sql.*;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
-
 import com.tienda.DTO.UsuarioDTO;
 
 public class UsuarioDAO {

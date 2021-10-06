@@ -1,14 +1,12 @@
 package com.tienda.DAO;
 
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import com.tienda.DTO.ProveedorDTO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
-
-import com.tienda.DTO.ProveedorDTO;
 
 
 public class ProveedorDAO {

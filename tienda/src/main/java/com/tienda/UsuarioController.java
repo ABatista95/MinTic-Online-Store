@@ -16,8 +16,7 @@ public class UsuarioController {
     public void registrarUsuario(UsuarioDTO usuario) 
      {
         UsuarioDAO Dao= new UsuarioDAO(); 
-        Dao.registrarUsuario(usuario);
-        
+        Dao.registrarUsuario(usuario);        
      }
 	
     @RequestMapping("/consultarUsuario")
