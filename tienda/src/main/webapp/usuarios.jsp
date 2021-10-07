@@ -37,7 +37,8 @@
             var columna5 = document.createElement("td");
             columna5.innerHTML = item.usuario;
             var columna6 = document.createElement("td");            
-            columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"' class='btn btn-danger'>Eliminar</a>";
+            //columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"' class='btn btn-danger'>Eliminar</a>";
+            columna6.innerHTML = "<a href = '' onclick=eliminarUsuario('"+item.cedulaUsuario+"') class='btn btn-danger'>Eliminar</a>";
             var columna7 = document.createElement("td");
             columna7.innerHTML = "<a href = 'editar.jsp?cedula="+item.cedulaUsuario+"' class='btn btn-primary'>Editar</a>";;
             
@@ -52,6 +53,15 @@
           });
         }
       })
+      
+      function eliminarUsuario(cedula){
+    	  alert(cedula)
+    	  var eliminar = $.ajax({
+    		  type:"GET",
+    		  url: "http://localhost:8080/eliminarUsuario?cedula="+cedula,
+    		  success: function(data){}
+    	  })
+      }
     </script>
 
     <!--
