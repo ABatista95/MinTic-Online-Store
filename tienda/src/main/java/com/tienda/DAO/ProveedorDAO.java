@@ -69,7 +69,7 @@ public class ProveedorDAO {
             	 
             	  ProveedorDTO proveedor= new ProveedorDTO();
                   proveedor.setNitProveedor(res.getInt("nit_proveedor"));
-                  proveedor.setDireccionProveedor(res.getString("direccion_proveedor"));
+                  proveedor.setDireccionProveedor(res.getString("direccion_provedor"));
                   proveedor.setCiudadProveedor(res.getString("ciudad_proveedor"));
                   proveedor.setNombreProveedor(res.getString("nombre_proveedor"));
                   proveedor.setTelefonoProveedor(res.getString("telefono_proveedor"));
