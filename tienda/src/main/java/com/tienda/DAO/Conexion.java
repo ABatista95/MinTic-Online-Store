@@ -12,7 +12,6 @@ public class Conexion {
     //static String login = "root";
     //static String password = "Proyectomintic1*";
     //static String url = "jdbc:mysql://localhost:3306/"+bd;
-
     
     Connection connection = null;
     

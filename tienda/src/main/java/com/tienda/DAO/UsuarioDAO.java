@@ -82,7 +82,6 @@ public class UsuarioDAO {
               JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
              }
              return miCliente;
-
          }
          
          public void eliminarUsuario(int cedula) {

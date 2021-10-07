@@ -21,6 +21,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var usuarios = $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/listarClientes",
+        success: function(data){
+          $.each(data, function(i, item){
+            lista = document.getElementById("myTable");
+            var tr = document.createElement("tr");
+            var columna1 = document.createElement("td");
+            columna1.innerHTML = item.cedulaCliente;
+            var columna2 = document.createElement("td");
+            columna2.innerHTML = item.nombreCliente;
+            var columna3 = document.createElement("td");
+            columna3.innerHTML = item.direccionCliente;
+            var columna4 = document.createElement("td");
+            columna4.innerHTML = item.emailCliente;
+            var columna5 = document.createElement("td");
+            columna5.innerHTML = item.contactoCliente;
+            var columna6 = document.createElement("td");            
+            columna6.innerHTML = "<a href = 'eliminarCliente?cedula="+item.cedulaCliente+"' class='btn btn-danger'>Eliminar</a>";
+            var columna7 = document.createElement("td");
+            columna7.innerHTML = "<a href = 'editar.jsp?cedula="+item.cedulaUsuario+"' class='btn btn-primary'>Editar</a>";;
+            
+            lista.appendChild(tr);
+            tr.appendChild(columna1);
+            tr.appendChild(columna2);
+            tr.appendChild(columna3);
+            tr.appendChild(columna4);
+            tr.appendChild(columna5);
+            tr.appendChild(columna6);
+            tr.appendChild(columna7);
+          });
+        }
+      })
+    </script>
   </head>
 <!--
 Parallo Template
@@ -101,20 +136,20 @@ https://templatemo.com/tm-534-parallo
                        <form>
                        	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
                        	 <br/>
-                         <div class="one-half"><label>Nit Proveedor</label> <br>                      
-                          <input style= " margin:0px" type="text" id="NitProveedor" name="Nit Proveedor" placeholder= "Nit de Proveedor" size="30"></div>
+                         <div class="one-half"><label>Cedula cliente</label> <br>                      
+                          <input style= " margin:0px" type="text" id="cedula" name="cedula" placeholder= "Cedula cliente" size="30"></div>
                       
                       	  <div class="one-half"><label>Nombre Completo:</label> <br>
-                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+                          <input style= " margin:0px" type="text" id="nombre" name="nombre" size="30" placeholder="Nombres y apellidos"></div>
                           
-                          <div class="one-half"><label>Direccion:</label> <br>
-                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcciï¿½n empresa" size="30"></div>
+                          <div class="one-half"><label>Dirección:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Dirección cliente" size="30"></div>
                           
-                          <div class="one-half last"><label>Ciudad:</label> <br>
-                          <input style= " margin:0px" type="text" id="Ciudad" name="Ciudad" placeholder= "Ciudad" size="30"></div>
+                          <div class="one-half last"><label>E-Mail:</label> <br>
+                          <input style= " margin:0px" type="text" id="correo" name="correo" placeholder= "Correo cliente" size="30"></div>
                                                                      
                           <div class="one-half last"><label>Telefono contacto:</label> <br>
-                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Contacto" size="30"></div>
+                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Telefóno" size="30"></div>
                           
                           <div class="one-half last">
                           <input type="submit" style= " margin:15px 5px" class="btn btn-success" value="AGREGAR"/>
@@ -127,10 +162,10 @@ https://templatemo.com/tm-534-parallo
                         <table id ="table" class="col-lg-12">
                           <thead class="thead-dark">
                             <tr>
-                              <th scope="col">Nit-Proveedor</th>
+                              <th scope="col">Cedula</th>
                               <th scope="col">Nombre</th>
                               <th scope="col">Direccion</th>
-                              <th scope="col">Ciudad</th>
+                              <th scope="col">E-Mail</th>
                               <th scope="col">Contacto</th>
                               <th scope="col">Eliminar</th>
                               <th scope="col">Editar</th>
