@@ -68,8 +68,8 @@
     
     //Carga los datos en el formulario
     function cargarDatos(){
-    	document.Formulario.Password.value = "32323"
-    	alert("Cargado");
+    	document.Formulario.Password.value = "32323";
+    	//alert("Cargado");
     }
     
     //Actualiza un registro de la BD
@@ -93,6 +93,7 @@
   	  })
     }
       
+    // Función de agregar
      function registrarUsuario(){    	  
 	   	  var cedula = document.getElementById("Cedula").value;
 	   	  var correo = document.getElementById("Correo").value;
@@ -188,6 +189,7 @@ https://templatemo.com/tm-534-parallo
                   <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTA DE USUARIOS</h2>
               </header>
           </div>
+
 
           <div class="row">
               <div class="col-lg-12">
@@ -291,7 +293,7 @@ https://templatemo.com/tm-534-parallo
             <br/>
             Felipe Bello
             <br/>
-            Lorena
+            Lorena Alzate
             <br/>
             Oscar Bermudez
           </p>
