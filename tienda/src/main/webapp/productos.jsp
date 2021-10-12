@@ -76,7 +76,7 @@
         </div>
 
          <!-- Lista Datos -->
-         <section id="tmAppFeatures">
+       <section id="tmAppFeatures">
           <div class="row">
               <header class="col-12 text-center text-white tm-bg-black-transparent p-5 tm-app-header">
                   <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE PRODUCTOS</h2>
@@ -92,16 +92,56 @@
                   </div>
               </div>
 
-              <div class="col-lg-12" >
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                        <a href="#tmFeatures" class="btn btn-primary">BUSCAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">AGREGAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">EDITAR</a>
-                        <a href="#tmFeatures" class="btn btn-primary">ELIMINAR</a>
+              <div class="row">
+              <div class="col-lg-12">
+                  <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                      <div class="col-lg-4">
+                       <form id="Formulario" name="Formulario">
+                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+                       	 <br/>
+                         <div class="one-half"><label>Cédula:</label> <br>                      
+                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula" size="30"></div>
+                      
+                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+                          
+                          <div class="one-half"><label>Correo electronico:</label> <br>
+                          <input style= " margin:0px; padding 20px" type="text" id="Correo" name="Correo electronico" placeholder="Email" size="30"></div>
+                          
+                          <div class="one-half last"><label>Usuario:</label> <br>
+                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
+                                                                     
+                          <div class="one-half last"><label>Contraseña:</label> <br>
+                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contraseña" size="30"></div>
+                          
+                          <div class="one-half last">
+                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
+                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
+                                            
+                      </form>
+                      </div>
+                      
+                      <div class="col-lg-8">
+                        <table id ="table" class="col-lg-12">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Cedula</th>
+                              <th scope="col">Correo</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Contraseña</th>
+                              <th scope="col">Usuario</th>
+                              <th scope="col">Eliminar</th>
+                              <th scope="col">Editar</th>
+                            </tr>	
+                          </thead>
+                          <tbody id = "myTable">
+                          
+                          </tbody>
+                        </table>
                       </div>
                   </div>
               </div>
+          </div>    
           </div>        
       </section>
 
