@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Parallo - Contact Page</title>
+    <title>Reportes | Tienda</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
@@ -17,11 +17,72 @@
 
     <!-- ImportaciÃ³n de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  </head>
-<!--
-Parallo Template
-https://templatemo.com/tm-534-parallo
--->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script>
+    var usuarios = $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/tienda/listarUsuarios",
+        success: function(data){
+          $.each(data, function(i, item){
+            lista = document.getElementById("ListUsers");
+            var tr = document.createElement("tr");
+            var columna1 = document.createElement("td");
+            columna1.innerHTML = item.cedulaUsuario;
+            var columna2 = document.createElement("td");
+            columna2.innerHTML = item.emailUsuario;
+            var columna3 = document.createElement("td");
+            columna3.innerHTML = item.nombreUsuario;
+            var columna4 = document.createElement("td");
+            columna4.innerHTML = item.password;
+            var columna5 = document.createElement("td");
+            columna5.innerHTML = item.usuario;
+              
+            lista.appendChild(tr);
+            tr.appendChild(columna1);
+            tr.appendChild(columna2);
+            tr.appendChild(columna3);
+            tr.appendChild(columna4);
+            tr.appendChild(columna5);
+            
+          });
+        }
+      })
+       var clientes = $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/tienda/listarClientes",
+        success: function(data){
+          $.each(data, function(i, item){
+            listaClientes = document.getElementById("listClients");
+            var tr = document.createElement("tr");
+            var clm1 = document.createElement("td");
+            clm1.innerHTML = item.cedulaCliente;
+            var clm2 = document.createElement("td");
+            clm2.innerHTML = item.nombreCliente;
+            var clm3 = document.createElement("td");
+            clm3.innerHTML = item.direccionCliente;
+            var clm4 = document.createElement("td");
+            clm4.innerHTML = item.emailCliente;
+            var clm5 = document.createElement("td");
+            clm5.innerHTML = item.telefonoCliente;
+              
+            listaClientes.appendChild(tr);
+            tr.appendChild(clm1);
+            tr.appendChild(clm2);
+            tr.appendChild(clm3);
+            tr.appendChild(clm4);
+            tr.appendChild(clm5);
+            
+          });
+        }
+      });
+    
+    
+    
+    
+ </script> 
+
+</head>
+
   <body id="servicesPage">
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
       <div class="container-fluid">
@@ -105,6 +166,7 @@ https://templatemo.com/tm-534-parallo
               <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
                   <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTADO DE USUARIOS</h2>
               </header>
+              
           </div>
 
 
@@ -121,11 +183,10 @@ https://templatemo.com/tm-534-parallo
                               <th scope="col">Nombre</th>
                               <th scope="col">Contraseña</th>
                               <th scope="col">Usuario</th>
-                              <th scope="col">Eliminar</th>
-                              <th scope="col">Editar</th>
+                           
                             </tr>	
                           </thead>
-                          <tbody id = "myTable">
+                          <tbody id = "ListUsers">
                           
                           </tbody>
                         </table>
@@ -153,15 +214,14 @@ https://templatemo.com/tm-534-parallo
                           <thead class="thead-dark">
                             <tr>
                               <th scope="col">Cedula</th>
-                              <th scope="col">Correo</th>
                               <th scope="col">Nombre</th>
-                              <th scope="col">Contraseña</th>
-                              <th scope="col">Usuario</th>
-                              <th scope="col">Eliminar</th>
-                              <th scope="col">Editar</th>
+                              <th scope="col">Direccion</th>
+                              <th scope="col">Correo</th>
+                              <th scope="col">Telefono</th>
+                              
                             </tr>	
                           </thead>
-                          <tbody id = "myTable">
+                          <tbody id = "listClients">
                           
                           </tbody>
                         </table>
@@ -188,16 +248,14 @@ https://templatemo.com/tm-534-parallo
                         <table id ="table" class="col-lg-12">
                           <thead class="thead-dark">
                             <tr>
-                              <th scope="col">Cedula</th>
+                              <th scope="col">Cedula Cliente</th>
+                              <th scope="col">Nombre Cliente</th>
+                              <th scope="col">Direccion</th>
                               <th scope="col">Correo</th>
-                              <th scope="col">Nombre</th>
-                              <th scope="col">Contraseña</th>
-                              <th scope="col">Usuario</th>
-                              <th scope="col">Eliminar</th>
-                              <th scope="col">Editar</th>
-                            </tr>	
+                              <th scope="col">Telefono</th>
+                                                          </tr>	
                           </thead>
-                          <tbody id = "myTable">
+                          <tbody id = "ListVentas">
                           
                           </tbody>
                         </table>
