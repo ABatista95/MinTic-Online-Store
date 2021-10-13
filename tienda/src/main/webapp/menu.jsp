@@ -11,8 +11,7 @@
 	<link href="/CSS/menu.css" rel="stylesheet" type="text/css">
     
 </head>
-<body>
-
+<body> 
 	<nav>
 		<ul>
 			<li><a class="active" href="#home">Home</a></li>
