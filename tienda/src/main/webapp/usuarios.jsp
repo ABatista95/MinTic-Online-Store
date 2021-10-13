@@ -127,8 +127,7 @@ https://templatemo.com/tm-534-parallo
 -->
   </head>
 
-  <body> 
-  
+  <body>   
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
       <div class="container-fluid">
         <div class="row tm-brand-row">

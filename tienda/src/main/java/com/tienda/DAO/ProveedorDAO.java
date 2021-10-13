@@ -17,7 +17,7 @@ public class ProveedorDAO {
       Statement estatuto = conex.getConnection().createStatement();
       estatuto.executeUpdate("INSERT INTO usuarios VALUES ('"+proveedor.getNitProveedor()+"', '"
         +proveedor.getDireccionProveedor()+"', '"+proveedor.getCiudadProveedor()+"','"+proveedor.getNombreProveedor()+"','"+proveedor.getTelefonoProveedor()+"')");
-      JOptionPane.showMessageDialog(null, "Se ha registrado Exitosamente el Proveedor","Información",JOptionPane.INFORMATION_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Se ha registrado Exitosamente el Proveedor","Información",JOptionPane.INFORMATION_MESSAGE);
       estatuto.close();
       conex.desconectar();
       
