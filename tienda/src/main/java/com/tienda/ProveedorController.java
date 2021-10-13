@@ -25,8 +25,9 @@ public class ProveedorController {
         
     }
 	
-    @RequestMapping("/listarProveedores")
+    @RequestMapping("/listarProveedores")    
     public ArrayList< ProveedorDTO> listaDeProveedores() {
+    	System.out.println("Llego Controller - Proveedor");
     	ProveedorDAO Dao=new ProveedorDAO();  
         return Dao.listaDeProveedores();   
     }

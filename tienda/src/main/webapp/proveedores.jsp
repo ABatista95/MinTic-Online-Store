@@ -141,7 +141,7 @@ https://templatemo.com/tm-534-parallo
                        	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
                        	 <br/>
                          <div class="one-half"><label>Nit Proveedor</label> <br>                      
-                          <input style= " margin:0px" type="text" id="NitProveedor" name="Nit Proveedor" placeholder= "Nit de Proveedor" size="30"></div>
+                          <input style= " margin:0px" type="text" id="NitProveedor" name="NitProveedor" placeholder= "Nit de Proveedor" size="30"></div>
                       
                       	  <div class="one-half"><label>Nombre Completo:</label> <br>
                           <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>

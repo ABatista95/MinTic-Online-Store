@@ -20,8 +20,8 @@ public class Conexion {
     public Conexion() {
         try{
            //obtenemos el driver de para mysql
-           //Class.forName("com.mysql.cj.jdbc.Driver");  //-- Drive para Mysql
-           Class.forName("org.mariadb.jdbc.Driver");  //-- Drive para MariaDB
+           Class.forName("com.mysql.cj.jdbc.Driver");  //-- Drive para Mysql
+           //Class.forName("org.mariadb.jdbc.Driver");  //-- Drive para MariaDB
            //obtenemos la conexión
            connection = DriverManager.getConnection(url,login,password);
            if (connection!=null){

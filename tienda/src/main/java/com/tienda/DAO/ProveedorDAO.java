@@ -58,7 +58,9 @@ public class ProveedorDAO {
          
          
          
-         public ArrayList<ProveedorDTO> listaDeProveedores() {
+        public ArrayList<ProveedorDTO> listaDeProveedores() {
+        	 
+        	 System.out.println("Llego DAO - Proveedor");
              ArrayList< ProveedorDTO> miProveedor = new ArrayList< ProveedorDTO>();
              Conexion conex= new Conexion();
                
