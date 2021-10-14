@@ -57,9 +57,30 @@
             tr.appendChild(columna5);
             tr.appendChild(columna6);
             tr.appendChild(columna7);
-          });
+          });  
         }
       })
+      
+      //Editar Proveedor.
+      function editarProveedor(){
+	    var nit = document.getElementById("NitProveedor").value;
+	    var nombre = document.getElementById("Nombre").value;
+	    var direccion = document.getElementById("Direccion").value;
+	    var telefono = document.getElementById("Contacto").value;
+	    var ciudad = document.getElementById("Ciudad").value;
+	    
+	    var editar = $.ajax({
+	        type: "GET",
+	        url: "http://localhost:8080/editarProveedor?nit_proveedor="+nit+
+	        										  "&direccion_proveedor="+direccion+
+	        										  "&ciudad_proveedor="+ciudad+
+	        										  "&nombre_proveedor="+nombre+
+	        										  "&telefono_proveedor="+telefono,
+	        success:function(data){
+	            window.location("http://localhost:8080/proveedores.jsp");
+	        }
+	    })
+	}
     </script>
   </head>
 <!--

@@ -21,7 +21,7 @@
     <script>
     var usuarios = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/tienda/listarUsuarios",
+        url: "http://localhost:8080/listarUsuarios",
         success: function(data){
           $.each(data, function(i, item){
             lista = document.getElementById("myTable");
@@ -83,8 +83,8 @@
    	  	
    	  	
     	var eliminar = $.ajax({
-  		  type:"GET",
-  		  url: "http://localhost:8080/registrarUsuario?cedulaUsuario="+cedula+
+  		  type:"POST",
+  		  url: "http://localhost:8080/actualizarUsuario?cedulaUsuario="+cedula+
 				 									 "&emailUsuario="+correo+
 						 							 "&nombreUsuario="+nombre+
 						 							 "&password="+password+

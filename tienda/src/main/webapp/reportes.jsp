@@ -21,7 +21,7 @@
  <script>
     var usuarios = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/tienda/listarUsuarios",
+        url: "http://localhost:8080/listarUsuarios",
         success: function(data){
           $.each(data, function(i, item){
             lista = document.getElementById("ListUsers");
@@ -49,7 +49,7 @@
       })
        var clientes = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/tienda/listarClientes",
+        url: "http://localhost:8080/listarClientes",
         success: function(data){
           $.each(data, function(i, item){
             listaClientes = document.getElementById("listClients");
@@ -71,7 +71,6 @@
             tr.appendChild(clm3);
             tr.appendChild(clm4);
             tr.appendChild(clm5);
-            
           });
         }
       });
