@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
 
-    <!-- Importación de iconos -->
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
     
 </head>
-<body>
+<body id="aboutPage">
 	<div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
       <div class="container-fluid">
         <div class="row tm-brand-row">
@@ -75,7 +77,7 @@
         <section id="tmAppFeatures">
           <div class="row">
               <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
-                  <h2 class="text-uppercase mb-2 tm-app-feature-header">REPORTE DE VENTAS</h2>
+                  <h2 class="text-uppercase mb-2 tm-app-feature-header">GESTI&Oacute;N DE VENTAS</h2>
               </header>
           </div>
 
@@ -84,29 +86,29 @@
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box"> 
                       <div class="col-lg-4">
-                       <form id="Formulario" name="Formulario">
-                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
-                       	 <br/>
-                         <div class="one-half"><label>Cédula:</label> <br>                      
-                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula" size="30"></div>
-                      
-                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
-                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
-                          
-                          <div class="one-half"><label>Correo electronico:</label> <br>
-                          <input style= " margin:0px; padding 20px" type="text" id="Correo" name="Correo electronico" placeholder="Email" size="30"></div>
-                          
-                          <div class="one-half last"><label>Usuario:</label> <br>
-                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
-                                                                     
-                          <div class="one-half last"><label>Contraseña:</label> <br>
-                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contraseña" size="30"></div>
-                          
-                          <div class="one-half last">
-                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
-                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
-                                            
-                      </form>
+	                       <form id="Formulario" name="Formulario">
+	                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+	                       	 <br/>
+	                         <div class="one-half"><label>Cédula:</label> <br>                      
+	                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula" size="30"></div>
+	                      
+	                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+	                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+	                          
+	                          <div class="one-half"><label>Correo electronico:</label> <br>
+	                          <input style= " margin:0px; padding 20px" type="text" id="Correo" name="Correo electronico" placeholder="Email" size="30"></div>
+	                          
+	                          <div class="one-half last"><label>Usuario:</label> <br>
+	                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
+	                                                                     
+	                          <div class="one-half last"><label>Contraseña:</label> <br>
+	                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contraseña" size="30"></div>
+	                          
+	                          <div class="one-half last">
+	                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
+	                                            
+	                      </form>
                       </div>
                       
                       <div class="col-lg-8">
@@ -169,28 +171,30 @@
                 </p>
             </div>
           </div>
-        </div>
-      
-
-        <!-- Page footer -->
-        <footer class="row">
-          <p class="col-12 text-white text-center tm-copyright-text">
-            Copyright @ 2021 App Min-Tic - TingCol. 
-            Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
-            <br/>
-            <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
-            <br/>
-            Felipe Bello
-            <br/>
-            Lorena Alzate
-            <br/>
-            Oscar Bermudez
-          </p>
-        </footer>
-      </div>
+        </div> 
       
       <!-- .container-fluid -->
     </div>
+    
+    <!-- Page footer -->
+    <footer class="row">
+    	<div class="col-12 text-center text-white tm-bg-black-transparent p-0">
+	         <p class="col-12 text-center m-1">
+		         Copyright @ 2021 App Min-Tic. 
+		         Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
+		         <br/>
+		         <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
+		         <br/>
+		         Felipe Bello
+		         <br/>
+		         Lorena Alzate
+		         <br/>
+		         Oscar Bermudez
+		         <br/>
+		         Jose Barrios
+	       	 </p>
+        </div> 
+    </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
