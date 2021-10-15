@@ -12,28 +12,38 @@ public class UsuarioDAO {
 	// Metodo para agregar.
 	public void registrarUsuario(UsuarioDTO usuario) 
     {
-	 System.out.println("Llego hasta a ca");
      Conexion conex= new Conexion();
      try {      
       Statement estatuto = conex.getConnection().createStatement();
-      System.out.println("valor de cedula: "+usuario.getCedulaUsuario());
       estatuto.executeUpdate("INSERT INTO usuarios VALUES ('"+usuario.getCedulaUsuario()+"', '"
         +usuario.getEmailUsuario()+"', '"+usuario.getNombreUsuario()+"','"+usuario.getPassword()+"','"+usuario.getUsuario()+"')");
       //JOptionPane.showMessageDialog(null, "Se ha registrado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
       estatuto.close();
-      conex.desconectar();
-      System.out.println("Llego inserto");
-      
+      conex.desconectar();      
      } catch (SQLException e) {
                System.out.println(e.getMessage());
      System.out.println( "No se Registro la persona");
      }
     }
 	
+	// Metodo editar registro.
+    public void editarUsuario(UsuarioDTO usuario) {
+		Conexion conex= new Conexion();
+		try {
+			Statement st= conex.getConnection().createStatement();
+			st.executeUpdate("UPDATE usuarios SET email_usuario ='"+usuario.getEmailUsuario()+"', nombre_usuario = '"+usuario.getNombreUsuario()+"', password = '"+usuario.getPassword()+"', usuario = '"+usuario.getUsuario()+"' WHERE cedula_usuario = "+usuario.getCedulaUsuario()); 
+			//JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
+		      st.close();
+		      conex.desconectar();
+		}catch(SQLException e) {
+            System.out.println(e.getMessage());
+            	JOptionPane.showMessageDialog(null, "No se Actualizó la persona");
+		}
+	}
 	
-	// Consulta usuario de manera individual.
+	
+	// Metodo consultar de manera individual.
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento) {
-		System.out.println("Llego al metodo de consulta cliente.");
         ArrayList< UsuarioDTO> miUsuario = new ArrayList< UsuarioDTO>();
         Conexion conex= new Conexion();
         
@@ -61,7 +71,7 @@ public class UsuarioDAO {
        }
          
          
-         // Listar usuarios
+         // Metodo Listar registros.
          public ArrayList<UsuarioDTO> listaDeUsuarios() {
              ArrayList< UsuarioDTO> miUsuario = new ArrayList< UsuarioDTO>();
              Conexion conex= new Conexion();
@@ -87,14 +97,14 @@ public class UsuarioDAO {
             	   System.out.println( "no se pudo consultar la Persona\n"+e);
              }
              return miUsuario;
-         }
+         }         
          
          
-         // Metodo eliminar.
+         // Metodo eliminar registro.
          public void eliminarUsuario(int cedula) {
              Conexion conex = new Conexion();
              try {            	 
-                 String query = "DELETE FROM usuarios WHERE cedula_usuario = " + cedula;
+                 String query = "DELETE FROM usuarios WHERE cedula_usuario = ?";
                  preparedStatement = conex.getConnection().prepareStatement(query);
                  preparedStatement.setInt(1,cedula);
                  preparedStatement.executeUpdate();
