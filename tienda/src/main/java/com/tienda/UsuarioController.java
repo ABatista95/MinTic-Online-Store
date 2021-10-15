@@ -19,15 +19,15 @@ public class UsuarioController {
 	
     @RequestMapping("/consultarUsuario")
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento) {
-    	System.out.println("Llego al API consulta cliente.");
+    	System.out.println("Llego al API consulta cliente."+ documento);
         UsuarioDAO Dao = new UsuarioDAO(); 
         return Dao.consultarUsuario(documento);        
     }
     
     @RequestMapping("/editarUsuario")
-    public void editarUsuario(int cedula) {    
+    public void editarUsuario(UsuarioDTO usuario) {    
         UsuarioDAO Dao=new UsuarioDAO();  
-        Dao.eliminarUsuario(cedula);
+        Dao.editarUsuario(usuario);
     }
 	
     @RequestMapping("/listarUsuarios")

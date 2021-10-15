@@ -125,7 +125,7 @@ https://templatemo.com/tm-534-parallo
         <section id="tmAppFeatures">
           <div class="row">
               <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
-                  <h2 class="text-uppercase mb-2 tm-app-feature-header">LISTA DE CLIENTES</h2>
+                  <h2 class="text-uppercase mb-2 tm-app-feature-header">GESTI&Oacute;N DE CLIENTES</h2>
               </header>
           </div>
 

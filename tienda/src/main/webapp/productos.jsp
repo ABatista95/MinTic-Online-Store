@@ -184,7 +184,7 @@
        <section id="tmAppFeatures">
           <div class="row">
               <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
-                  <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE PRODUCTOS</h2>
+                  <h2 class="text-uppercase mb-3 tm-app-feature-header">GESTI&Oacute;N DE PRODUCTOS</h2>
               </header>
           </div>
 
