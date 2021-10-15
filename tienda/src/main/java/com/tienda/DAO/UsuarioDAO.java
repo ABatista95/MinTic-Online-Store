@@ -2,7 +2,7 @@ package com.tienda.DAO;
 
 import java.sql.*;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+
 import com.tienda.DTO.UsuarioDTO;
 
 public class UsuarioDAO {
@@ -26,7 +26,7 @@ public class UsuarioDAO {
       
      } catch (SQLException e) {
                System.out.println(e.getMessage());
-      JOptionPane.showMessageDialog(null, "No se Registro la persona");
+     System.out.println( "No se Registro la persona");
      }
     }
 	
@@ -55,7 +55,7 @@ public class UsuarioDAO {
                    conex.desconectar();
             
            } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
+        	   System.out.println("no se pudo consultar la Persona\n"+e);
            }
            return miUsuario;
        }
@@ -84,7 +84,7 @@ public class UsuarioDAO {
                      conex.desconectar();
               
              } catch (Exception e) {
-              JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
+            	   System.out.println( "no se pudo consultar la Persona\n"+e);
              }
              return miUsuario;
          }

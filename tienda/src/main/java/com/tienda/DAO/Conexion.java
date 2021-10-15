@@ -3,15 +3,15 @@ package com.tienda.DAO;
 import java.sql.*;
 public class Conexion {
 	
-	//static String bd = "grupo37_equipo1";
-	//static String login = "admin";
-    //static String password = "Admin123$";
-    //static String url = "jdbc:mysql://camiloc2.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+bd;
+	static String bd = "grupo37_equipo1";
+	static String login = "admin";
+    static String password = "Admin123$";
+    static String url = "jdbc:mysql://camiloc2.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+bd;
     
-    static String bd = "tienda";
-    static String login = "root";
-    static String password = "Proyectomintic1*";
-    static String url = "jdbc:mysql://localhost:3306/"+bd;
+    //static String bd = "tienda";
+    //static String login = "root";
+    //static String password = "Proyectomintic1*";
+    //static String url = "jdbc:mysql://localhost:3306/"+bd;
     
     //Zona::  ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     
@@ -20,8 +20,8 @@ public class Conexion {
     public Conexion() {
         try{
            //Obtenemos el driver de para mysql
-           Class.forName("com.mysql.cj.jdbc.Driver");  //-- Drive para Mysql
-           //Class.forName("org.mariadb.jdbc.Driver");  //-- Drive para MariaDB
+           //Class.forName("com.mysql.cj.jdbc.Driver");  //-- Drive para Mysql
+           Class.forName("org.mariadb.jdbc.Driver");  //-- Drive para MariaDB
            //obtenemos la conexión
            connection = DriverManager.getConnection(url,login,password);
            if (connection!=null){
