@@ -183,7 +183,7 @@
          <!-- Lista Datos -->
        <section id="tmAppFeatures">
           <div class="row">
-              <header class="col-12 text-center text-white tm-bg-black-transparent p-5 tm-app-header">
+              <header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
                   <h2 class="text-uppercase mb-3 tm-app-feature-header">LISTA DE PRODUCTOS</h2>
               </header>
           </div>
@@ -347,25 +347,29 @@
             </div>
           
         </section>
-
-         <!-- Page footer -->
-        <footer class="row">
-          <p class="col-12 text-white text-center tm-copyright-text">
-            Copyright @ 2021 App Min-Tic - TingCol. 
-            Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
-            <br/>
-            <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
-            <br/>
-            Felipe Bello
-            <br/>
-            Lorena Alzate
-            <br/>
-            Oscar Bermudez
-          </p>
-        </footer>
-      </div>
+         
       <!-- .container-fluid -->
     </div>
+    
+    <!-- Page footer -->
+    <footer class="row">
+    	<div class="col-12 text-center text-white tm-bg-black-transparent p-0">
+	         <p class="col-12 text-center m-1">
+		         Copyright @ 2021 App Min-Tic. 
+		         Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
+		         <br/>
+		         <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
+		         <br/>
+		         Felipe Bello
+		         <br/>
+		         Lorena Alzate
+		         <br/>
+		         Oscar Bermudez
+		         <br/>
+		         Jose Barrios
+	       	 </p>
+        </div> 
+    </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
