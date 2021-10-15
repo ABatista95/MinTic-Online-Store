@@ -12,30 +12,16 @@ import com.tienda.DTO.UsuarioDTO;
 public class UsuarioController {
 
     @RequestMapping("/registrarUsuario")
-    public void registrarUsuario(UsuarioDTO usuario) 
-     {
-    	//int cedula,String email, String nombre,String password, String usuario
-    	//UsuarioDTO registroUsuario = new UsuarioDTO();
-    	//registroUsuario.setCedulaUsuario(cedula);
-    	//registroUsuario.setNombreUsuario(nombre);
-    	//registroUsuario.setEmailUsuario(email);
-    	//registroUsuario.setUsuario(usuario);
-    	//registroUsuario.setPassword(password);    	
-    	//System.out.println("Valor: "+usuario);
-    	
-    	System.out.println("Paso por aca"+usuario.getCedulaUsuario()+
-    								  " "+usuario.getNombreUsuario()+
-    								  " "+usuario.getEmailUsuario()+
-    								  " "+usuario.getPassword()+
-    								  " "+usuario.getUsuario());
+    public void registrarUsuario(UsuarioDTO usuario) {   
         UsuarioDAO Dao= new UsuarioDAO(); 
         Dao.registrarUsuario(usuario);        
      }
 	
     @RequestMapping("/consultarUsuario")
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento) {
+    	System.out.println("Llego al API consulta cliente.");
         UsuarioDAO Dao = new UsuarioDAO(); 
-    return Dao.consultarUsuario(documento);        
+        return Dao.consultarUsuario(documento);        
     }
     
     @RequestMapping("/editarUsuario")

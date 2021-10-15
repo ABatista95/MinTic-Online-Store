@@ -33,38 +33,37 @@ public class UsuarioDAO {
 	
 	// Consulta usuario de manera individual.
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento) {
-        ArrayList< UsuarioDTO> miCliente = new ArrayList< UsuarioDTO>();
+		System.out.println("Llego al metodo de consulta cliente.");
+        ArrayList< UsuarioDTO> miUsuario = new ArrayList< UsuarioDTO>();
         Conexion conex= new Conexion();
-          
+        
         try {
-         PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios where cedula_usuario = ? ");
-         consulta.setInt(1, documento);
-         ResultSet res = consulta.executeQuery();
-         
-        if(res.next()){
-            UsuarioDTO usuario= new UsuarioDTO();
-            usuario.setCedulaUsuario(Integer.parseInt(res.getString("cedula_usuario")));
-            usuario.setEmailUsuario(res.getString("email_usuario"));
-            usuario.setNombreUsuario(res.getString("nombre_usuario"));
-            usuario.setPassword(res.getString("password"));
-            usuario.setUsuario(res.getString("usuario"));
-       
-          miCliente.add(usuario);
-                }
-                res.close();
-                consulta.close();
-                conex.desconectar();
-         
-        } catch (Exception e) {
-         JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
-        }
-        return miCliente;
-       } 
+            PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios WHERE cedula_usuario ="+ documento);
+            ResultSet res = consulta.executeQuery();
+            while(res.next()){
+                UsuarioDTO usuario= new UsuarioDTO();
+                   usuario.setCedulaUsuario(Integer.parseInt(res.getString("cedula_usuario")));
+                   usuario.setEmailUsuario(res.getString("email_usuario"));
+                   usuario.setNombreUsuario(res.getString("nombre_usuario"));
+                   usuario.setPassword(res.getString("password"));
+                   usuario.setUsuario(res.getString("usuario"));
+           
+                   miUsuario.add(usuario);
+                   }
+                   res.close();
+                   consulta.close();
+                   conex.desconectar();
+            
+           } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
+           }
+           return miUsuario;
+       }
          
          
          // Listar usuarios
          public ArrayList<UsuarioDTO> listaDeUsuarios() {
-             ArrayList< UsuarioDTO> miCliente = new ArrayList< UsuarioDTO>();
+             ArrayList< UsuarioDTO> miUsuario = new ArrayList< UsuarioDTO>();
              Conexion conex= new Conexion();
                
              try {
@@ -78,7 +77,7 @@ public class UsuarioDAO {
                      usuario.setPassword(res.getString("password"));
                      usuario.setUsuario(res.getString("usuario"));
              
-               miCliente.add(usuario);
+                     miUsuario.add(usuario);
                      }
                      res.close();
                      consulta.close();
@@ -87,7 +86,7 @@ public class UsuarioDAO {
              } catch (Exception e) {
               JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
              }
-             return miCliente;
+             return miUsuario;
          }
          
          

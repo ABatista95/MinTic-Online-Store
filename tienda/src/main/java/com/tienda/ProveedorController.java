@@ -17,6 +17,12 @@ public class ProveedorController {
 	 ProveedorDAO Dao= new ProveedorDAO(); 
         Dao.registrarProveedores(proveedor);	        
      }
+	
+	@RequestMapping("/editarProveedor")
+    public void editarProveedor(ProveedorDTO proveedor) {
+    	ProveedorDAO Dao = new ProveedorDAO();
+    	Dao.editarProveedor(proveedor);
+    }
 		
     @RequestMapping("/consultarProveedor")
 	public ArrayList<ProveedorDTO> consultarProveedor(int nit) {

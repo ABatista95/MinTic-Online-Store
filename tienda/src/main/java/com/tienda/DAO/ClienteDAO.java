@@ -85,6 +85,20 @@ public class ClienteDAO {
         return miCliente;
     }
 	
+	public void editarCliente(ClienteDTO cliente) {
+		Conexion conex= new Conexion();
+		try {
+			Statement st= conex.getConnection().createStatement();
+			st.executeUpdate("UPDATE clientes SET email_cliente ='"+cliente.getEmailCliente()+"', nombre_cliente = '"+cliente.getNombreCliente()+"', direccion_cliente = '"+cliente.getDireccionCliente()+"', telefono_cliente = '"+cliente.getTelefonoCliente()+"' WHERE cedula_cliente = "+cliente.getCedulaCliente()); 
+			JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
+		      st.close();
+		      conex.desconectar();
+		}catch(SQLException e) {
+            System.out.println(e.getMessage());
+            	JOptionPane.showMessageDialog(null, "No se Actualizó el cliente");
+		}
+	}
+	
 	//Metodo eliminar
 	public void eliminarCliente(int cedula) {
         Conexion conex = new Conexion();

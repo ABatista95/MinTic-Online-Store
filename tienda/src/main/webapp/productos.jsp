@@ -6,16 +6,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Parallo - About Page</title>
+    <title>PRODUCTOS | Menu</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
 
-    <!-- ImportaciÃ³n de iconos -->
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    var usuarios = $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/listarProductos",
+        success: function(data){
+          $.each(data, function(i, item){
+            lista = document.getElementById("myTable");
+            var tr = document.createElement("tr");
+            var columna1 = document.createElement("td");
+            columna1.innerHTML = item.cedulaUsuario;
+            var columna2 = document.createElement("td");
+            columna2.innerHTML = item.emailUsuario;
+            var columna3 = document.createElement("td");
+            columna3.innerHTML = item.nombreUsuario;
+            var columna4 = document.createElement("td");
+            columna4.innerHTML = item.password;
+            var columna5 = document.createElement("td");
+            columna5.innerHTML = item.usuario;
+            var columna6 = document.createElement("td");            
+            //columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"' class='btn btn-danger'>Eliminar</a>";
+            columna6.innerHTML = "<a href = '' onclick=eliminarProducto('"+item.idProducto+"') class='btn btn-danger'>Eliminar</a>";
+            var columna7 = document.createElement("td");
+            //columna7.innerHTML = '<form>	<input type="submit" onclick="cargarDatos()" value="Edit" />   </form>';
+            //columna7.innerHTML = "<input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/>";
+           
+            columna7.innerHTML = "<a href = '' onclick=cargarDatos() class='btn btn-primary'>Editar</a>";
+            
+            lista.appendChild(tr);
+            tr.appendChild(columna1);
+            tr.appendChild(columna2);
+            tr.appendChild(columna3);
+            tr.appendChild(columna4);
+            tr.appendChild(columna5);
+            tr.appendChild(columna6);
+            tr.appendChild(columna7);
+          });
+        }
+      })
+      
+   function eliminarProducto(idProducto){
+ 	  alert("Cedula de eliminar "+cedula)
+ 	  var eliminar = $.ajax({
+ 		  type:"GET",
+ 		  url: "http://localhost:8080/eliminarUsuario?cedula="+cedula,
+ 		  success: function(data){}
+ 	  })
+    }
+    
+    //Carga los datos en el formulario
+    function cargarDatos(){
+    	document.Formulario.Password.value = "32323";
+    	//alert("Cargado");
+    }
+    
+    //Actualiza un registro de la BD
+    function actualizarUsuario(){ 	
+    	
+   		var cedula = document.getElementById("#").value;
+   	  	var correo = document.getElementById("Correo").value;
+   	  	var nombre = document.getElementById("Nombre").value;
+   	  	var password = document.getElementById("Password").value;
+   	  	var usuario = document.getElementById("Usuario").value;
+   	  	
+   	  	
+    	var eliminar = $.ajax({
+  		  type:"POST",
+  		  url: "http://localhost:8080/actualizarProducto?cedulaUsuario="+cedula+
+				 									 "&emailUsuario="+correo+
+						 							 "&nombreUsuario="+nombre+
+						 							 "&password="+password+
+						 							 "&usuario="+usuario,
+  		  success: function(data){}
+  	  })
+    }
+      
+    // Función de agregar
+     function registrarProducto(){    	  
+	   	  var cedula = document.getElementById("Cedula").value;
+	   	  var correo = document.getElementById("Correo").value;
+	   	  var nombre = document.getElementById("Nombre").value;
+	   	  var password = document.getElementById("Password").value;
+	   	  var usuario = document.getElementById("Usuario").value; 
+	   	  
+	   	   var agregar = $.ajax({
+	   		  type:"POST",
+	   		  url: "http://localhost:8080/registrarProducto?cedulaUsuario="+cedula+
+	   				  									 "&emailUsuario="+correo+
+	   				  									 "&nombreUsuario="+nombre+
+	   				  									 "&password="+password+
+	   				  									 "&usuario="+usuario,
+	   		  success: function(data){}    	   	
+	   	  })
+      }
+     
+     function mensaje(){
+    	 alert("Invocado.")
+     } 
+     
+    </script>    
   </head>
+  
+  
   <body id="aboutPage">
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
       <div class="container-fluid">
@@ -83,66 +188,61 @@
               </header>
           </div>
 
+          
           <div class="row">
-              <div class="col-lg-12">
-                  <div class="tm-bg-white-transparent tm-app-feature-box">
-                      <div class="tm-app-feature-description-box">
-                          <p>Lista de informaciÃ³n de los CLIENTES</p>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="row">
-              <div class="col-lg-12">
-                  <div class="tm-bg-white-transparent tm-app-feature-box"> 
-                      <div class="col-lg-4">
-                       <form id="Formulario" name="Formulario">
-                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
-                       	 <br/>
-                         <div class="one-half"><label>Cédula:</label> <br>                      
-                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de cédula" size="30"></div>
-                      
-                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
-                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
-                          
-                          <div class="one-half"><label>Correo electronico:</label> <br>
-                          <input style= " margin:0px; padding 20px" type="text" id="Correo" name="Correo electronico" placeholder="Email" size="30"></div>
-                          
-                          <div class="one-half last"><label>Usuario:</label> <br>
-                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
-                                                                     
-                          <div class="one-half last"><label>Contraseña:</label> <br>
-                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contraseña" size="30"></div>
-                          
-                          <div class="one-half last">
-                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
-                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
-                                            
-                      </form>
-                      </div>
-                      
-                      <div class="col-lg-8">
-                        <table id ="table" class="col-lg-12">
-                          <thead class="thead-dark">
-                            <tr>
-                              <th scope="col">Cedula</th>
-                              <th scope="col">Correo</th>
-                              <th scope="col">Nombre</th>
-                              <th scope="col">Contraseña</th>
-                              <th scope="col">Usuario</th>
-                              <th scope="col">Eliminar</th>
-                              <th scope="col">Editar</th>
-                            </tr>	
-                          </thead>
-                          <tbody id = "myTable">
-                          
-                          </tbody>
-                        </table>
-                      </div>
-                  </div>
-              </div>
-          </div>    
-          </div>        
+            <div class="col-lg-12">
+                <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                    <div class="col-lg-4">
+                     <form id="Formulario" name="Formulario">
+                     	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
+                     	 <br/>
+                       <div class="one-half"><label>Código producto:</label> <br>                      
+                        <input style= " margin:0px" type="text" id="idProducto" name="idProducto"placeholder= "Código asignado" size="30"></div>
+                    
+                    	  <div class="one-half"><label>Nombre:</label> <br>
+                        <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombre de producto"></div>
+                        
+                        <div class="one-half"><label>Nit de Proveedor:</label> <br>
+                        <input style= " margin:0px; padding 20px" type="text" id="nitProveedor" name="nitProveedor" placeholder="Nit del vendedor" size="30"></div>
+                        
+                        <div class="one-half last"><label>Precio de compra:</label> <br>
+                        <input style= " margin:0px" type="text" id="precioCompra" name="precioCompra" placeholder= "Valor compra" size="30"></div>
+                                                                   
+                        <div class="one-half last"><label>IVA:</label> <br>
+                        <input style= " margin:0px" type="text" id="iva" name="iva" placeholder="Valor IVA" size="30"></div>
+                        
+                        <div class="one-half last"><label>Precio de venta:</label> <br>
+                        <input style= " margin:0px" type="text" id="precioVenta" name="precioVenta" placeholder="Valor precio" size="30"></div>
+                        
+                        <div class="one-half last">
+                        <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
+                        <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
+                                          
+                    </form>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                      <table id ="table" class="col-lg-12">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Proveedor</th>
+                            <th scope="col">V. Compra</th>
+                            <th scope="col">IVA</th>
+                            <th scope="col">V. Venta</th>
+                            <th scope="col">Eliminar</th>
+                            <th scope="col">Editar</th>
+                          </tr>	
+                        </thead>
+                        <tbody id = "myTable">
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+        </div>        
       </section>
 
         <!-- About -->

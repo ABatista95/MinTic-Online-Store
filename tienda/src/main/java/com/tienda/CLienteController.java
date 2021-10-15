@@ -12,13 +12,19 @@ import com.tienda.DTO.ClienteDTO;
 public class CLienteController {
 
 	@RequestMapping("/registrarCliente")
-    public void registrarCliente(int cedula, String nombre, String email, String password, String usuario) 
-     {		
+	public void registrarCliente(int cedula, String nombre, String email, String password, String usuario) 
+	 {		
 		ClienteDTO registroUsuario = new ClienteDTO();
 		
-        ClienteDAO Dao= new ClienteDAO(); 
-        Dao.registrarCliente(registroUsuario);        
-     }
+	    ClienteDAO Dao= new ClienteDAO(); 
+	    Dao.registrarCliente(registroUsuario);        
+	 }
+	
+	 @RequestMapping("/editarCliente")
+	    public void editarCliente(ClienteDTO cliente) {
+	    	ClienteDAO Dao = new ClienteDAO();
+	    	Dao.editarCliente(cliente);
+	    }
 	
     @RequestMapping("/consultarCliente")
 	public ArrayList<ClienteDTO> consultarCliente(int documento) {
