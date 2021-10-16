@@ -37,7 +37,7 @@ public class UsuarioDAO {
 		      conex.desconectar();
 		}catch(SQLException e) {
             System.out.println(e.getMessage());
-            	JOptionPane.showMessageDialog(null, "No se Actualizó la persona");
+            	//JOptionPane.showMessageDialog(null, "No se Actualizó la persona");
 		}
 	}
 	

@@ -165,7 +165,7 @@
                 </div>
             </div>
           </div>   
-          <button class="w3-xlarge fas fa-unlock w3-button w3-hover-indigo w3-text-yellow w3-round-xxlarge" onclick="abroModal('id02','<%=u.getUsuario()%>')"></button>
+          <!-- <button class="w3-xlarge fas fa-unlock w3-button w3-hover-indigo w3-text-yellow w3-round-xxlarge" onclick="abroModal('id02','<%=u.getUsuario()%>')"></button> -->
         </section>
         
         <!-- Sección de Lista de usuarios -->
