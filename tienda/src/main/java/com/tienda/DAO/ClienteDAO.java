@@ -17,7 +17,7 @@ public class ClienteDAO {
       Statement estatuto = conex.getConnection().createStatement();
       estatuto.executeUpdate("INSERT INTO clientes VALUES ('"+usuario.getCedulaCliente()+"', '"
         +usuario.getDireccionCliente()+"', '"+usuario.getEmailCliente()+"','"+usuario.getNombreCliente()+"','"+usuario.getTelefonoCliente()+"')");
-      JOptionPane.showMessageDialog(null, "Se ha registrado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Se ha registrado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
       estatuto.close();
       conex.desconectar();
       
@@ -25,9 +25,24 @@ public class ClienteDAO {
                System.out.println(e.getMessage());
       JOptionPane.showMessageDialog(null, "No se Registro el cliente");
      }
-    }
+    }	
 	
-	//Metodo para Consultar
+	// Metodo editar registro.
+	public void editarCliente(ClienteDTO cliente) {
+		Conexion conex= new Conexion();
+		try {
+			Statement st= conex.getConnection().createStatement();
+			st.executeUpdate("UPDATE clientes SET email_cliente ='"+cliente.getEmailCliente()+"', nombre_cliente = '"+cliente.getNombreCliente()+"', direccion_cliente = '"+cliente.getDireccionCliente()+"', telefono_cliente = '"+cliente.getTelefonoCliente()+"' WHERE cedula_cliente = "+cliente.getCedulaCliente()); 
+			JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
+		      st.close();
+		      conex.desconectar();
+		}catch(SQLException e) {
+            System.out.println(e.getMessage());
+            	JOptionPane.showMessageDialog(null, "No se Actualizó el cliente");
+		}
+	}
+	
+	// Metodo consultar de manera individual.
 	public ArrayList<ClienteDTO> consultarCliente(int documento) {
         ArrayList< ClienteDTO> miCliente = new ArrayList< ClienteDTO>();
         Conexion conex= new Conexion();
@@ -83,28 +98,14 @@ public class ClienteDAO {
          JOptionPane.showMessageDialog(null, "no se pudo consultar la Persona\n"+e);
         }
         return miCliente;
-    }
+    }	
 	
-	public void editarCliente(ClienteDTO cliente) {
-		Conexion conex= new Conexion();
-		try {
-			Statement st= conex.getConnection().createStatement();
-			st.executeUpdate("UPDATE clientes SET email_cliente ='"+cliente.getEmailCliente()+"', nombre_cliente = '"+cliente.getNombreCliente()+"', direccion_cliente = '"+cliente.getDireccionCliente()+"', telefono_cliente = '"+cliente.getTelefonoCliente()+"' WHERE cedula_cliente = "+cliente.getCedulaCliente()); 
-			JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
-		      st.close();
-		      conex.desconectar();
-		}catch(SQLException e) {
-            System.out.println(e.getMessage());
-            	JOptionPane.showMessageDialog(null, "No se Actualizó el cliente");
-		}
-	}
 	
 	//Metodo eliminar
 	public void eliminarCliente(int cedula) {
         Conexion conex = new Conexion();
         try {
             String query = "DELETE FROM clientes WHERE cedula_cliente = ?";
-            preparedStatement = conex.getConnection().prepareStatement(query);
             preparedStatement = conex.getConnection().prepareStatement(query);
             preparedStatement.setInt(1,cedula);
             preparedStatement.executeUpdate();

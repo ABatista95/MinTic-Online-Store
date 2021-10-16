@@ -192,54 +192,50 @@
           <div class="row">
             <div class="col-lg-12">
                 <div class="tm-bg-white-transparent tm-app-feature-box"> 
-                    <div class="col-lg-4">
-                     <form id="Formulario" name="Formulario">
-                     	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
-                     	 <br/>
-                       <div class="one-half"><label>Código producto:</label> <br>                      
-                        <input style= " margin:0px" type="text" id="idProducto" name="idProducto"placeholder= "Código asignado" size="30"></div>
                     
-                    	  <div class="one-half"><label>Nombre:</label> <br>
-                        <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombre de producto"></div>
-                        
-                        <div class="one-half"><label>Nit de Proveedor:</label> <br>
-                        <input style= " margin:0px; padding 20px" type="text" id="nitProveedor" name="nitProveedor" placeholder="Nit del vendedor" size="30"></div>
-                        
-                        <div class="one-half last"><label>Precio de compra:</label> <br>
-                        <input style= " margin:0px" type="text" id="precioCompra" name="precioCompra" placeholder= "Valor compra" size="30"></div>
-                                                                   
-                        <div class="one-half last"><label>IVA:</label> <br>
-                        <input style= " margin:0px" type="text" id="iva" name="iva" placeholder="Valor IVA" size="30"></div>
-                        
-                        <div class="one-half last"><label>Precio de venta:</label> <br>
-                        <input style= " margin:0px" type="text" id="precioVenta" name="precioVenta" placeholder="Valor precio" size="30"></div>
-                        
-                        <div class="one-half last">
-                        <input type="submit" style= " margin:15px 5px" class="btn btn-success" onclick="registrarUsuario()" value="AGREGAR"/>
-                        <input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/></div>  
-                                          
-                    </form>
-                    </div>
+                    <div class="col-lg-12 text-center">
+		                  <div class="row">
+			                  <div class="col-lg-12">
+			                  	 <h4 style= " margin:0px 100px">REGISTRO</h4>
+		                       	 <br/>
+			                  </div>
+		                  </div>
+		                  
+	                      <div class="row">
+		                      <div class="col-lg-6">
+		                         <div class="one-half"><label>Código Producto:</label> <br>                      
+		                          <input style= " margin:0px" type="text" id="Codigo" name="Codigo" placeholder= "Código" size="30"></div>
+		                      
+		                      	  <div class="one-half"><label>Nombre Producto:</label> <br>
+		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombre"></div>
+		                          
+		                          <div class="one-half"><label>Nit Proveedor:</label> <br>
+		                          <input style= " margin:0px; padding 20px" type="text" id="NitProveedor" name="NitProveedor" placeholder="Nit Proveedor" size="30"></div>
+		                          
+		                      </div>
+		                      
+		                      <div class="col-lg-6">
+		                          <div class="one-half last"><label>Precio de compra:</label> <br>
+		                          <input style= " margin:0px" type="text" id="pCompra" name="pCompra" placeholder= "Precio" size="30"></div>
+		                                                                     
+		                          <div class="one-half last"><label>Iva Producto:</label> <br>
+		                          <input style= " margin:0px" type="text" id="iva" name="iva" placeholder="Valor IVA" size="30"></div>
+		                          
+		                          <div class="one-half last"><label>Precio de venta:</label> <br>
+		                          <input style= " margin:0px" type="text" id="pVenta" name="pVenta" placeholder="Precio" size="30"></div>
+		                          
+		                      </div>
+	                      </div>
+	                      
+	                      <div class="one-half last">
+	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarProducto(Codigo.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarProducto()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarProducto()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarProducto(Codigo.value)" value="BORRAR"/>
+	                      </div>
+	                  
+	                  </div> 
                     
-                    <div class="col-lg-8">
-                      <table id ="table" class="col-lg-12">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Proveedor</th>
-                            <th scope="col">V. Compra</th>
-                            <th scope="col">IVA</th>
-                            <th scope="col">V. Venta</th>
-                            <th scope="col">Eliminar</th>
-                            <th scope="col">Editar</th>
-                          </tr>	
-                        </thead>
-                        <tbody id = "myTable">
-                        
-                        </tbody>
-                      </table>
-                    </div>
                 </div>
             </div>
         </div>        

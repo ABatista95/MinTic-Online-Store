@@ -15,44 +15,37 @@
 
     <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-
+	
+	<!-- Importación de ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>  
-    // FUNCIONES DEL CRUD
+    // FUNCIONES DEL CRUD   
     
-    // Función Eliminar
-	function eliminarUsuario(cedula){    	
-		var validar = confirm("Desea eliminar el usuario con cedula: "+cedula+" ?");
-	   	if (validar == true) {
-	   		var eliminar = $.ajax({
-	  		  type:"GET",
-	  		  url: "http://localhost:8080/eliminarUsuario?cedula="+cedula,
-	  		  success: function(data){}
-	  		 })
-	  		 alert("Usuario eliminado");
-	  		 document.location.reload();
-	   	} 
-	}
-    
-    //Función consultar Usuario
+    //Función consultar Registro
     function consultarUsuario(cedula){    	
-    	var cedulas = document.getElementById("Cedula").value;
-    	alert("Cedula a consultar: " + cedula);    	
-		var proveedor = $.ajax({
-		    type: "GET",
-		    url: "http://localhost:8080/consultarUsuario?documento="+cedula,
-		    success:function(data){
-		        $.each(data, function(i, item){
-		            var cedula = document.getElementById("Cedula").value = item.cedulaUsuario;
-		            var correo = document.getElementById("Correo").value = item.emailUsuario;
-		            var nombre = document.getElementById("Nombre").value = item.nombreUsuario;
-		            var pass = document.getElementById("Password").value = item.password;
-		            var usuario = document.getElementById("Usuario").value = item.usuario;
-		        })	
-		    }
-		});
-    	
+    	var cedula = document.getElementById("Cedula").value;
+    	if (cedula != ""){
+    		alert("Cedula a consultar: " + cedula);    	
+    		var result = $.ajax({
+    		    type: "GET",
+    		    url: "http://localhost:8080/consultarUsuario?documento="+cedula,
+    		    success:function(data){
+    		        $.each(data, function(i, item){  
+   		        		document.getElementById("Correo").value = item.emailUsuario;
+   		        		document.getElementById("Nombre").value = item.nombreUsuario;
+   		                document.getElementById("Password").value = item.password;
+   		                document.getElementById("Usuario").value = item.usuario;
+    		        })	
+    		    }
+    		});
+    		
+    	}else{
+    		alert("No se registra una cedula para buscar.")
+    	}   	
     }
     
     
@@ -66,7 +59,7 @@
    	  	
    	  	var validar = confirm("Desea actualizar el usuario con cedula: "+cedula+" ?");
 	   	if (validar == true) {
-	   		var eliminar = $.ajax({
+	   		var editar = $.ajax({
 		   		  type:"POST",
 		   		  url: "http://localhost:8080/editarUsuario?cedulaUsuario="+cedula+
 		 				 									 "&emailUsuario="+correo+
@@ -86,7 +79,6 @@
 	   	  var password = document.getElementById("Password").value;
 	   	  var usuario = document.getElementById("Usuario").value;
 	   	  
-	   	  alert("Esto es una alert "+cedula)
 	   	   var agregar = $.ajax({
 	   		  type:"POST",
 	   		  url: "http://localhost:8080/registrarUsuario?cedulaUsuario="+cedula+
@@ -98,6 +90,19 @@
 	   	  })
       }
   
+  	// Función Eliminar
+ 	function eliminarUsuario(cedula){    	
+ 		var validar = confirm("Desea eliminar el usuario con cedula: "+cedula+" ?");
+ 	   	if (validar == true) {
+ 	   		var eliminar = $.ajax({
+ 	  		  type:"GET",
+ 	  		  url: "http://localhost:8080/eliminarUsuario?cedula="+cedula,
+ 	  		  success: function(data){}
+ 	  		 })
+ 	  		 alert("Usuario eliminado");
+ 	  		 document.location.reload();
+ 	   	} 
+ 	}
     </script>
 
     <!--
@@ -172,9 +177,9 @@ https://templatemo.com/tm-534-parallo
           <div class="row">
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box"> 
-	                  <div class="col-lg-12">
+	                  <div class="col-lg-12 text-center">
 		                  <div class="row">
-			                  <div class="col-lg-12 text-center">
+			                  <div class="col-lg-12">
 			                  	 <h4 style= " margin:0px 100px">REGISTRO</h4>
 		                       	 <br/>
 			                  </div>

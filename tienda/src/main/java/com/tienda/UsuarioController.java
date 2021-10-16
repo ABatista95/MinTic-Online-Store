@@ -19,7 +19,6 @@ public class UsuarioController {
 	
     @RequestMapping("/consultarUsuario")
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento) {
-    	System.out.println("Llego al API consulta cliente."+ documento);
         UsuarioDAO Dao = new UsuarioDAO(); 
         return Dao.consultarUsuario(documento);        
     }

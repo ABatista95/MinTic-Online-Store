@@ -6,6 +6,7 @@ public class ClienteDTO {
     private String emailCliente;
     private String nombreCliente;
     private String telefonoCliente;
+    
 	public Integer getCedulaCliente() {
 		return cedulaCliente;
 	}

@@ -9,7 +9,8 @@ import com.tienda.DTO.ProveedorDTO;
 public class ProveedorDAO {
 
 	PreparedStatement preparedStatement;
-
+	
+	// Metodo para agregar.
 	public void registrarProveedores(ProveedorDTO proveedor) 
     {
      Conexion conex= new Conexion();
@@ -26,6 +27,21 @@ public class ProveedorDAO {
       JOptionPane.showMessageDialog(null, "No se Registro el proveedor");
      }
     }
+	
+	// Metodo editar registro.
+    public void editarProveedor(ProveedorDTO proveedor) {
+		Conexion conex= new Conexion();
+		try {
+			Statement st= conex.getConnection().createStatement();
+			st.executeUpdate("UPDATE proveedores SET direccion_proveedor ='"+proveedor.getDireccionProveedor()+"', ciudad_proveedor = '"+proveedor.getCiudadProveedor()+"', nombre_proveedor = '"+proveedor.getNombreProveedor()+"', telefono_proveedor = '"+proveedor.getTelefonoProveedor()+"' WHERE nit_proveedor = "+proveedor.getNitProveedor()); 
+			//JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
+		      st.close();
+		      conex.desconectar();
+		}catch(SQLException e) {
+            System.out.println(e.getMessage());
+            	JOptionPane.showMessageDialog(null, "No se Actualizó el registro");
+		}
+	}
 	
 	//Metodo consultar proveedor.
 	public ArrayList<ProveedorDTO> consultarProveedor(int nit) {
@@ -56,21 +72,6 @@ public class ProveedorDAO {
         }
         return miProveedor;
        } 
-	
-	//Metodo editar Proveedor.
-	public void editarProveedor(ProveedorDTO proveedor) {
-		Conexion conex= new Conexion();
-		try {
-			Statement st= conex.getConnection().createStatement();
-			st.executeUpdate("UPDATE proveedores SET direccion_proveedor ='"+proveedor.getDireccionProveedor()+"', ciudad_proveedor = '"+proveedor.getCiudadProveedor()+"', nombre_proveedor = '"+proveedor.getNombreProveedor()+"', telefono_proveedor = '"+proveedor.getTelefonoProveedor()+"'WHERE nitproveedor = "+proveedor.getNitProveedor()); 
-			JOptionPane.showMessageDialog(null, "Se ha actualizado Exitosamente","Información",JOptionPane.INFORMATION_MESSAGE);
-		      st.close();
-		      conex.desconectar();
-		}catch(SQLException e) {
-            System.out.println(e.getMessage());
-            	JOptionPane.showMessageDialog(null, "No se Actualizó la persona");
-		}
-	}
          
          
         // Metodo listar proveedor.
@@ -110,7 +111,6 @@ public class ProveedorDAO {
              Conexion conex = new Conexion();
              try {
                  String query = "DELETE FROM proveedores WHERE nit_proveedor = ?";
-                 preparedStatement = conex.getConnection().prepareStatement(query);
                  preparedStatement = conex.getConnection().prepareStatement(query);
                  preparedStatement.setInt(1,nit);
                  preparedStatement.executeUpdate();

@@ -13,48 +13,96 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
 
-      <!-- Importacion de iconos -->
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     
     <!-- Importacion de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-
+	
+	<!-- Importación de ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-      var usuarios = $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/listarClientes",
-        success: function(data){
-          $.each(data, function(i, item){
-            lista = document.getElementById("myTable");
-            var tr = document.createElement("tr");
-            var columna1 = document.createElement("td");
-            columna1.innerHTML = item.cedulaCliente;
-            var columna2 = document.createElement("td");
-            columna2.innerHTML = item.nombreCliente;
-            var columna3 = document.createElement("td");
-            columna3.innerHTML = item.direccionCliente;
-            var columna4 = document.createElement("td");
-            columna4.innerHTML = item.emailCliente;
-            var columna5 = document.createElement("td");
-            columna5.innerHTML = item.telefonoCliente;
-            var columna6 = document.createElement("td");            
-            columna6.innerHTML = "<a href = 'eliminarCliente?cedula="+item.cedulaCliente+"' class='btn btn-danger'>Eliminar</a>";
-            var columna7 = document.createElement("td");
-            columna7.innerHTML = "<a href = 'editar.jsp?cedula="+item.cedulaUsuario+"' class='btn btn-primary'>Editar</a>";;
-            
-            lista.appendChild(tr);
-            tr.appendChild(columna1);
-            tr.appendChild(columna2);
-            tr.appendChild(columna3);
-            tr.appendChild(columna4);
-            tr.appendChild(columna5);
-            tr.appendChild(columna6);
-            tr.appendChild(columna7);
-          });
-        }
-      })
+// FUNCIONES DEL CRUD
+        
+    //Función consultar Registro
+    function consultarCliente(cedula){    	
+    	var cedula = document.getElementById("Cedula").value;
+    	if (cedula != ""){
+    		alert("Cedula a consultar: " + cedula);    	
+    		var result = $.ajax({
+    		    type: "GET",
+    		    url: "http://localhost:8080/consultarCliente?cedula="+cedula,
+    		    success:function(data){
+    		        $.each(data, function(i, item){  
+   		        		document.getElementById("Nombre").value = item.nombreCliente;
+   		                document.getElementById("Direccion").value = item.direccionCliente;
+   		             	document.getElementById("Correo").value = item.emailCliente;
+   		                document.getElementById("Contacto").value = item.telefonoCliente;
+    		        })	
+    		    }
+    		});
+    		
+    	}else{
+    		alert("No se registra una cedula para buscar.")
+    	}   	
+    }
+    
+    
+    // función actualizar registro.
+    function editarCliente(){ 	    	
+   		var cedula = document.getElementById("Cedula").value;
+   	  	var nombre = document.getElementById("Nombre").value;
+   	  	var direccion = document.getElementById("Direccion").value;
+   	  	var correo = document.getElementById("Correo").value;
+   	  	var contacto = document.getElementById("Contacto").value;  
+   	  	
+   	  	var validar = confirm("Desea actualizar el cliente con cedula: "+cedula+" ?");
+	   	if (validar == true) {
+	   		var editar = $.ajax({
+		   		  type:"POST",
+		   		  url: "http://localhost:8080/editarCliente?cedulaCliente="+cedula+
+		 				 									 "&direccionCliente="+direccion+
+		 						 							 "&emailCliente="+correo+
+		 						 							 "&nombreCliente="+nombre+
+		 						 							 "&telefonoCliente="+contacto,
+		   		  success: function(data){}
+	    	  })
+	   	}    	
+    }
+      
+    // Función de agregar
+    function registrarCliente(){    	  
+	var cedula = document.getElementById("Cedula").value;
+	var nombre = document.getElementById("Nombre").value;
+	var direccion = document.getElementById("Direccion").value;
+	var correo = document.getElementById("Correo").value;
+	var contacto = document.getElementById("Contacto").value;  
+	   	  
+  	var agregar = $.ajax({
+  		type:"POST",
+  		url: "http://localhost:8080/registrarCliente?cedulaCliente="+cedula+
+												 "&direccionCliente="+direccion+
+												 "&emailCliente="+correo+
+												 "&nombreCliente="+nombre+
+												 "&telefonoCliente="+contacto,
+		success: function(data){}    	   	
+  	  })
+    }
+    
+  	// Función Eliminar
+ 	function eliminarCliente(cedula){    	
+ 		var validar = confirm("Desea eliminar el cliente con cedula: "+cedula+" ?");
+ 	   	if (validar == true) {
+ 	   		var eliminar = $.ajax({
+ 	  		  type:"GET",
+ 	  		  url: "http://localhost:8080/eliminarCliente?cedula="+cedula,
+ 	  		  success: function(data){}
+ 	  		 })
+ 	  		 alert("Cliente eliminado");
+ 	  		 document.location.reload();
+ 	   	} 
+ 	}
     </script>
   </head>
 <!--
@@ -132,50 +180,47 @@ https://templatemo.com/tm-534-parallo
           <div class="row">
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box"> 
-                      <div class="col-lg-4">
-                       <form>
-                       	 <div><h4 style= " margin:0px 100px">REGISTRO</h4></div>
-                       	 <br/>
-                         <div class="one-half"><label>Cedula cliente</label> <br>                      
-                          <input style= " margin:0px" type="text" id="cedula" name="cedula" placeholder= "Cedula cliente" size="30"></div>
                       
-                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
-                          <input style= " margin:0px" type="text" id="nombre" name="nombre" size="30" placeholder="Nombres y apellidos"></div>
-                          
-                          <div class="one-half"><label>Dirección:</label> <br>
-                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Dirección cliente" size="30"></div>
-                          
-                          <div class="one-half last"><label>E-Mail:</label> <br>
-                          <input style= " margin:0px" type="text" id="correo" name="correo" placeholder= "Correo cliente" size="30"></div>
-                                                                     
-                          <div class="one-half last"><label>Telefono contacto:</label> <br>
-                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Telefóno" size="30"></div>
-                          
-                          <div class="one-half last">
-                          <input type="submit" style= " margin:15px 5px" class="btn btn-success" value="AGREGAR"/>
-                          <input type="submit" style= " margin:15px 3px" class="btn btn-primary" value="ACTUALIZAR"/></div>  
-                                            
-                      </form>
-                      </div>
+                  		<div class="col-lg-12 text-center">
+		                  <div class="row">
+			                  <div class="col-lg-12">
+			                  	 <h4 style= " margin:0px 100px">REGISTRO</h4>
+		                       	 <br/>
+			                  </div>
+		                  </div>
+		                  
+	                      <div class="row">
+		                      <div class="col-lg-6">
+		                          <div class="one-half"><label>Cedula cliente</label> <br>                      
+		                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula" placeholder= "Cedula cliente" size="30"></div>
+		                      
+		                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
+		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
+		                          
+		                          <div class="one-half"><label>Dirección:</label> <br>
+		                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Dirección cliente" size="30"></div>
+
+		                      </div>
+		                      
+		                      <div class="col-lg-6">
+		                          <div class="one-half last"><label>E-Mail:</label> <br>
+		                          <input style= " margin:0px" type="text" id="Correo" name="Correo" placeholder= "Correo cliente" size="30"></div>
+		                                                                     
+		                          <div class="one-half last"><label>Telefono contacto:</label> <br>
+		                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Telefóno" size="30"></div>
+
+		                      </div>
+	                      </div>
+	                      
+	                      <div class="one-half last">
+	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarCliente(Cedula.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarCliente()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarCliente()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarCliente(Cedula.value)" value="BORRAR"/>
+	                      </div>
+	                  
+	                  </div> 
                       
-                      <div class="col-lg-8">
-                        <table id ="table" class="col-lg-12">
-                          <thead class="thead-dark">
-                            <tr>
-                              <th scope="col">Cedula</th>
-                              <th scope="col">Nombre</th>
-                              <th scope="col">Direccion</th>
-                              <th scope="col">E-Mail</th>
-                              <th scope="col">Contacto</th>
-                              <th scope="col">Eliminar</th>
-                              <th scope="col">Editar</th>
-                            </tr>	
-                          </thead>
-                          <tbody id = "myTable">
-                          
-                          </tbody>
-                        </table>
-                      </div>
                   </div>
               </div>
           </div>        
