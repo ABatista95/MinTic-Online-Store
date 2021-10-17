@@ -20,104 +20,28 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script>
-    var usuarios = $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/tienda/listarProductos",
-        success: function(data){
-          $.each(data, function(i, item){
-            lista = document.getElementById("myTable");
-            var tr = document.createElement("tr");
-            var columna1 = document.createElement("td");
-            columna1.innerHTML = item.cedulaUsuario;
-            var columna2 = document.createElement("td");
-            columna2.innerHTML = item.emailUsuario;
-            var columna3 = document.createElement("td");
-            columna3.innerHTML = item.nombreUsuario;
-            var columna4 = document.createElement("td");
-            columna4.innerHTML = item.password;
-            var columna5 = document.createElement("td");
-            columna5.innerHTML = item.usuario;
-            var columna6 = document.createElement("td");            
-            //columna6.innerHTML = "<a href = 'eliminarUsuario?cedula="+item.cedulaUsuario+"' class='btn btn-danger'>Eliminar</a>";
-            columna6.innerHTML = "<a href = '' onclick=eliminarProducto('"+item.idProducto+"') class='btn btn-danger'>Eliminar</a>";
-            var columna7 = document.createElement("td");
-            //columna7.innerHTML = '<form>	<input type="submit" onclick="cargarDatos()" value="Edit" />   </form>';
-            //columna7.innerHTML = "<input type="submit" style= " margin:15px 3px" class="btn btn-primary" onclick="editarUsuario()" value="ACTUALIZAR"/>";
-           
-            columna7.innerHTML = "<a href = '' onclick=cargarDatos() class='btn btn-primary'>Editar</a>";
-            
-            lista.appendChild(tr);
-            tr.appendChild(columna1);
-            tr.appendChild(columna2);
-            tr.appendChild(columna3);
-            tr.appendChild(columna4);
-            tr.appendChild(columna5);
-            tr.appendChild(columna6);
-            tr.appendChild(columna7);
-          });
-        }
-      })
-      
-   function eliminarProducto(idProducto){
- 	  alert("Cedula de eliminar "+cedula)
- 	  var eliminar = $.ajax({
- 		  type:"GET",
- 		  url: "http://localhost:8080/eliminarUsuario?cedula="+cedula,
- 		  success: function(data){}
- 	  })
-    }
-    
-    //Carga los datos en el formulario
-    function cargarDatos(){
-    	document.Formulario.Password.value = "32323";
-    	//alert("Cargado");
-    }
-    
-    //Actualiza un registro de la BD
-    function actualizarUsuario(){ 	
-    	
-   		var cedula = document.getElementById("#").value;
-   	  	var correo = document.getElementById("Correo").value;
-   	  	var nombre = document.getElementById("Nombre").value;
-   	  	var password = document.getElementById("Password").value;
-   	  	var usuario = document.getElementById("Usuario").value;
-   	  	
-   	  	
-    	var eliminar = $.ajax({
-  		  type:"POST",
-  		  url: "http://localhost:8080/actualizarProducto?cedulaUsuario="+cedula+
-				 									 "&emailUsuario="+correo+
-						 							 "&nombreUsuario="+nombre+
-						 							 "&password="+password+
-						 							 "&usuario="+usuario,
-  		  success: function(data){}
-  	  })
-    }
-      
-    // Función de agregar
-     function registrarProducto(){    	  
-	   	  var cedula = document.getElementById("Cedula").value;
-	   	  var correo = document.getElementById("Correo").value;
-	   	  var nombre = document.getElementById("Nombre").value;
-	   	  var password = document.getElementById("Password").value;
-	   	  var usuario = document.getElementById("Usuario").value; 
-	   	  
-	   	   var agregar = $.ajax({
-	   		  type:"POST",
-	   		  url: "http://localhost:8080/registrarProducto?cedulaUsuario="+cedula+
-	   				  									 "&emailUsuario="+correo+
-	   				  									 "&nombreUsuario="+nombre+
-	   				  									 "&password="+password+
-	   				  									 "&usuario="+usuario,
-	   		  success: function(data){}    	   	
-	   	  })
-      }
-     
-     function mensaje(){
-    	 alert("Invocado.")
-     } 
-     
-    </script>    
+    $('#submit-file').on("click",function(e){
+    	e.preventDefault();
+    	$('#files').parse({
+    		config: {
+    			delimiter: "auto",
+    			complete: displayHTMLTable,
+    		},
+    		before: function(file, inputElem)
+    		{
+    			//console.log("Parsing file...", file);
+    		},
+    		error: function(err, file)
+    		{
+    			//console.log("ERROR:", err, file);
+    		},
+    		complete: function()
+    		{
+    			//console.log("Done with all files");
+    		}
+    	});
+    });
+      </script>    
   </head>
   
   
@@ -187,7 +111,18 @@
                   <h2 class="text-uppercase mb-3 tm-app-feature-header">GESTI&Oacute;N DE PRODUCTOS</h2>
               </header>
           </div>
+<form class="form-inline">
 
+	<div class="form-group">
+
+		<input type="file" id="files" class="form-control" accept=".csv" required />
+	</div>
+
+	<div class="form-group">
+		<button type="submit" id="submit-file" class="btn btn-primary">CARGAR</button>
+	</div>
+	
+</form>
           
           <div class="row">
             <div class="col-lg-12">
