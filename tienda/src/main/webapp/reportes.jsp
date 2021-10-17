@@ -14,11 +14,19 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>    
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
-
-    <!-- ImportaciÃ³n de iconos -->
+    
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+	
+	<!-- Importación de ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script>
+ 
+ 	//Metodo para listar los usuarios.
     var usuarios = $.ajax({
         type: "GET",
         url: "http://localhost:8080/listarUsuarios",
@@ -47,6 +55,8 @@
           });
         }
       })
+      
+      //Metodo para listar los clientes.
        var clientes = $.ajax({
         type: "GET",
         url: "http://localhost:8080/listarClientes",
@@ -74,6 +84,8 @@
           });
         }
       });
+ 	
+ 	
     function abroModalProducto(id, producto){
     	if(id === 'id02'){
     	    document.getElementById('id02').style.display='block'; 
@@ -82,9 +94,7 @@
     	if(id === 'id03'){
     	    document.getElementById('id03').style.display='block'; 
     	    document.getElementById("deleteprod").value = producto;
-    	}
-    
-    
+    	}   
     
  </script> 
 
@@ -271,6 +281,69 @@
               </div>
           </div>        
       </section>
+      
+      <section class="row tm-testimonials-section">
+            <div class="col-12 tm-carousel">              
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">                    
+                  <div class="tm-person-img-container">
+                    <img src="img/person-1.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Praesent ornare</h3>
+                  <p class="tm-about-description">
+                    Vestibulum semper dolor sed elit mattis placerat cursus sed ac urna. Mauris eget suscipit purus, id ullamcorper mi. Mauris eu velit semper turpis semper.
+                  </p>
+                </div>
+
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <div class="tm-person-img-container">
+                    <img src="img/person-2.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Maecenas Pretium</h3>
+                  <p class="tm-about-description">
+                      Fusce pellenteqeue nunc sed orci mattis mattis. Etiam porttitor bibendum ligula eu saggittis. Duis lacus mi, tincidunt ut massa elementum, volutpat.
+                  </p>
+                </div>
+
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <div class="tm-person-img-container">
+                    <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Nulla Quis Magna</h3>
+                  <p class="tm-about-description">
+                    Donec id ante nulla. Quisque vestibulum dapibus neque. Nam ex massa, fringilla ac tortor a, porta quismod mi. Maecenas gravida maximus ultrices.
+                  </p>
+                </div>
+
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <div class="tm-person-img-container">
+                    <img src="img/person-1.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Praesent ornare</h3>
+                  <p class="tm-about-description">
+                    Vestibulum semper dolor sed elit placerat cursus sed ac urna. Mauris eget suscipit purus, id ullamcorper mi. Mauris eu velit semper turpis semper.
+                  </p>
+                </div>    
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <div class="tm-person-img-container">
+                    <img src="img/person-2.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Maecenas Pretium</h3>
+                  <p class="tm-about-description">
+                      Fusce pellenteqeue nunc sed orci mattis mattis. Etiam porttitor bibendum ligula eu saggittis. Duis lacus mi, tincidunt ut massa elementum, volutpat.
+                  </p>
+                </div>
+
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <div class="tm-person-img-container">
+                    <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">Nulla Quis Magna</h3>
+                  <p class="tm-about-description">
+                    Donec id ante nulla. Quisque vestibulum dapibus neque. Nam ex massa, fringilla ac tortor a, porta quismod mi. Maecenas gravida maximus ultrices.
+                  </p>
+                </div>          
+          </div>
+        </section>
         
       </div>
       <!-- .container-fluid -->

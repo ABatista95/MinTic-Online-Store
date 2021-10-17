@@ -17,17 +17,16 @@ public class CLienteController {
         Dao.registrarCliente(cliente);        
      }
 	
-	 @RequestMapping("/editarCliente")
-	    public void editarCliente(ClienteDTO cliente) {
-	    	ClienteDAO Dao = new ClienteDAO();
-	    	Dao.editarCliente(cliente);
-	    }
+	@RequestMapping("/editarCliente")
+    public void editarCliente(ClienteDTO cliente) {
+    	ClienteDAO Dao = new ClienteDAO();
+    	Dao.editarCliente(cliente);
+    }
 	
     @RequestMapping("/consultarCliente")
 	public ArrayList<ClienteDTO> consultarCliente(int cedula) {
         ClienteDAO Dao = new ClienteDAO(); 
-    return Dao.consultarCliente(cedula);
-        
+        return Dao.consultarCliente(cedula);
     }
 	
     @RequestMapping("/listarClientes")

@@ -232,8 +232,8 @@ https://templatemo.com/tm-534-parallo
            <div class="col-12 tm-tabs-container">
               <div class="tm-tab-links">
                     <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                        <li><a href="#tab1" class="active">
-                            <div class="icon-wrap"><i class="fas fa-2x fa-leaf"></i></div>
+                        <li><a href="#tab1" class="active ">
+                            <div class=""><i class="fas fa-2x fa-leaf"></i></div>
                             Service Tab One                        
                         </a></li>
                         <li><a href="#tab2" class="">
