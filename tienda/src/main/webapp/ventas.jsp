@@ -11,11 +11,16 @@
     <link rel="stylesheet" href="CSS/all.min.css" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
-    <link rel="stylesheet" href="CSS/Usuarios.css" />
-    
-
-    <!-- Importación de iconos -->
+   
+    <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+	
+	<!-- Importación de ajax -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body id="aboutPage">
 	<div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
@@ -76,30 +81,32 @@
 	          </div>
 	        </div>
 	
-	        <!-- About -->
+	        <!-- Lista Datos -->
 	        <section id="tmAppFeatures">
-	          <div class="row">
-				<header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
-		            <h2 class="text-uppercase text-center text-black tm-about-page-title">DETALLE DE VENTAS</h2>
-		            <hr class="tm-about-title-hr">
-	          	</header>
-		       	<div>
-		 			<div class="row-2">
-						  <form class="in-line">
-							  	<div class="tm-bg-white-transparent tm-app-feature-box">
-								  	<fieldset>            
-									  	<legend>Datos del cliente</legend>                    
-									  	<label for="Cedula">C&eacute;dula:</label>
-									  	<input type="Cedula" id="Cedula" placeholder="N&uacute;mero de C&eacute;dula" name="Cedula">
-									  	<button type="submit">CONSULTAR</button>
-									  	<label for="Cliente">Cliente:</label>
-									  	<input type="Cliente" id="Cliente" placeholder="Nombre del cliente" name="Nombre">
-									  	<label for="Consecutivo">Consecutivo:</label>
-									  	<input type="Consecutivo" id="Consecutivo" placeholder="Consecutivo" name="Consecutivo">
-								  	</fieldset>
-								</div>
-						  
-							  <section> 
+				<div class="row">
+					<header class="col-12 text-center text-white tm-bg-black-transparent p-3 tm-app-header">
+					    <h2 class="text-uppercase mb-2 tm-app-feature-header">GESTI&Oacute;N DE VENTAS</h2>
+					</header>
+          		</div>
+	          
+ 			<div class="row">
+ 				<div class="col-lg-12">
+					
+						<form class="in-line">
+						  	<div class="tm-bg-white-transparent tm-app-feature-box">
+							  	<fieldset>            
+								  	<legend>Datos del cliente</legend>                    
+								  	<label for="Cedula">C&eacute;dula:</label>
+								  	<input type="Cedula" id="Cedula" placeholder="N&uacute;mero de C&eacute;dula" name="Cedula">
+								  	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
+								  	<label for="Cliente">Cliente:</label>
+								  	<input type="Cliente" id="Cliente" placeholder="Nombre del cliente" name="Nombre">
+								  	<label for="Consecutivo">Consecutivo:</label>
+								  	<input type="Consecutivo" id="Consecutivo" placeholder="Consecutivo" name="Consecutivo">
+							  	</fieldset>
+							</div>
+				  
+							<section>
 							  	<div class="tm-bg-white-transparent tm-app-feature-box">
 							  		<div class="container">
 							  			<div class="row">
@@ -113,8 +120,8 @@
 																	<label for="Codigo"></label>
 																	<div class="col-12">
 																		<label for="Codigo"></label>
-																		<input type="text" id="Codigo" name="Codigo">							
-																		<button type="submit">CONSULTAR</button>
+																		<input type="text" id="Codigo" name="Codigo">
+																		<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
 									  							</fieldset>
 									 						</td>
 															<td> 
@@ -145,8 +152,7 @@
 																	<label for="Codigo"></label>
 																	<div class="col-12"><label for="Codigo"></label>
 																	<input type="text" id="Codigo" name="Codigo">
-																	
-																	<button type="submit">CONSULTAR</button>
+																	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
 														  		</fieldset>
 														 	</td>
 															<td> 
@@ -174,38 +180,33 @@
 																	<label for="Codigo"></label>
 																	<div class="col-12"><label for="Codigo"></label>
 																	<input type="text" id="Codigo" name="Codigo">
-																	<button type="submit">CONSULTAR</button>
+																	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
 													  			</fieldset>
 														 	</td>
 															<td> 
 																<fieldset>
-																 
 																  <div class="col"><label for="Nombre"></label>
 																  <input type="text" style="width: 200px" id="Nombre" name="Nombre"> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																 
 																  <div class="col"><label for="Cant"></label>
 																  <input type="text" style="width: 100px" id="Cant" name="Cant"> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																
 																  <div class="col"><label for="VlrTotal3"></label>
 																  <input type="text" style="width: 150px" id="Vlrtotal3" name="VlrTotal3"> 
 																</fieldset>
 															</td>	
 														</tr>
 														<tr>
-															<td>
-																<button type="submit">CONFIRMAR</button>
-															</td>
+															<td></td>
 															<td></td>
 															<td>
-																<fieldset> Total Venta
+																<fieldset>Subtotal
 													  				<div class="col"><label for="TotalVenta"></label>
 													  				<input type="text" style="width: 150px" id="TotalVenta" name="TotalVenta"> 
 																</fieldset>
@@ -213,10 +214,13 @@
 														  			<div class="col"><label for="TotalIVA"></label>
 														  			<input type="text" style="width: 150px" id="TotalIVA" name="TotalIVA"> 
 																</fieldset>
-																<fieldset>Total Con IVA
+																<fieldset>TOTAL
 														  			<div class="col"><label for="TotalVentaconIVA"></label>
 															  		<input type="text" style="width: 150px" id="TotalVentaconIva" name="TotalVentaconIva"> 
 																</fieldset>
+															</td>
+															<td>
+																<button type="button" class="btn btn-info">REGISTRAR</button>
 															</td>
 														</tr>
 														<tr></tr>
@@ -228,14 +232,13 @@
 								</div>
 			 				</section>
 						</form>
-					</div>
-				</div>
-	
-	      </div>      
+					
+                </div>
+			</div>  
 			 
 	    </section>
-	    </div>
 	    
+	    </div>
 	    <!-- .container-fluid -->
     </div>
     
