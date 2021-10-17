@@ -22,7 +22,7 @@
     <script>
     var usuarios = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/listarProductos",
+        url: "http://localhost:8080/tienda/listarProductos",
         success: function(data){
           $.each(data, function(i, item){
             lista = document.getElementById("myTable");

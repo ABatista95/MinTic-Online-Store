@@ -21,7 +21,7 @@
  <script>
     var usuarios = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/listarUsuarios",
+        url: "http://localhost:8080/tienda/listarUsuarios",
         success: function(data){
           $.each(data, function(i, item){
             lista = document.getElementById("ListUsers");
@@ -49,7 +49,7 @@
       })
        var clientes = $.ajax({
         type: "GET",
-        url: "http://localhost:8080/listarClientes",
+        url: "http://localhost:8080/tienda/listarClientes",
         success: function(data){
           $.each(data, function(i, item){
             listaClientes = document.getElementById("listClients");
@@ -74,15 +74,7 @@
           });
         }
       });
-    function abroModalProducto(id, producto){
-    	if(id === 'id02'){
-    	    document.getElementById('id02').style.display='block'; 
-    	    document.getElementById("updateprod").value = producto;
-    	}
-    	if(id === 'id03'){
-    	    document.getElementById('id03').style.display='block'; 
-    	    document.getElementById("deleteprod").value = producto;
-    	}
+   
     
     
     

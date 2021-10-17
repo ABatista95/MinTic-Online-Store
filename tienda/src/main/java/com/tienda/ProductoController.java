@@ -30,9 +30,10 @@ public class ProductoController {
     }
 	
     @RequestMapping("/listarProductos")
-    public ArrayList< ProductoDTO> listaDeProductos() {    	
+    public ArrayList< ProductoDTO> listarProductos() {    	
     	ProductoDAO Dao=new ProductoDAO();  
-        return Dao.listaDeProductos();
+        return Dao.listarProductos();
+        
     }
 
     @RequestMapping("/eliminarProducto")

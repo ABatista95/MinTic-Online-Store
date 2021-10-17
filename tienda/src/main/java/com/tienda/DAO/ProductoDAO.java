@@ -52,13 +52,13 @@ PreparedStatement preparedStatement;
             PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos WHERE codigo_producto ="+ codigo);
             ResultSet res = consulta.executeQuery();
             while(res.next()){
-                ProductoDTO producto= new ProductoDTO();
-                producto.setCodigo_producto(Integer.parseInt(res.getString("codigo_producto")));
-                producto.setNombre_producto(res.getString("nombre_producto"));
-                producto.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
-                producto.setPrecio_compra(Integer.parseInt(res.getString("precio_compra")));
-                producto.setIvacompra(Integer.parseInt(res.getString("ivacompra")));
-                producto.setPrecio_venta(Integer.parseInt(res.getString("precio_venta")));
+            	 ProductoDTO producto= new ProductoDTO();
+                 producto.setCodigo_producto(Integer.parseInt(res.getString("codigo_producto")));
+                 producto.setNombre_producto(res.getString("nombre_producto"));
+                 producto.setNit_proveedor(res.getInt("nit_proveedor"));
+                 producto.setPrecio_compra(res.getInt("precio_compra"));
+                 producto.setIvacompra(res.getInt("ivacompra"));
+                 producto.setPrecio_venta(res.getInt("precio_venta"));
            
                miProducto.add(producto);
                }
@@ -74,29 +74,32 @@ PreparedStatement preparedStatement;
          
          
      // Metodo Listar registros.
-     public ArrayList<ProductoDTO> listaDeProductos() {
-         ArrayList< ProductoDTO> miProducto = new ArrayList< ProductoDTO>();
+     public ArrayList<ProductoDTO> listarProductos() {
+         ArrayList<ProductoDTO> miProducto = new ArrayList<ProductoDTO>();
          Conexion conex= new Conexion();
-           
+           System.out.print("Llega al metodo Listar Productos");
          try {
-          PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos");
-          ResultSet res = consulta.executeQuery();
+          PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos;");
+          ResultSet res = consulta.executeQuery(); 
+          System.out.print("la consulta es: "+consulta);
           while(res.next()){
               ProductoDTO producto= new ProductoDTO();
               producto.setCodigo_producto(Integer.parseInt(res.getString("codigo_producto")));
               producto.setNombre_producto(res.getString("nombre_producto"));
-              producto.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
-              producto.setPrecio_compra(Integer.parseInt(res.getString("precio_compra")));
-              producto.setIvacompra(Integer.parseInt(res.getString("ivacompra")));
-              producto.setPrecio_venta(Integer.parseInt(res.getString("precio_venta")));
+              producto.setNit_proveedor(res.getInt("nit_proveedor"));
+              producto.setPrecio_compra(res.getInt("precio_compra"));
+              producto.setIvacompra(res.getInt("ivacompra"));
+              producto.setPrecio_venta(res.getInt("precio_venta"));
          
              miProducto.add(producto);
+             System.out.print("Llega al metodo Listar Productos"+ miProducto);
              }
              res.close();
              consulta.close();
              conex.desconectar();
-          
+        
          } catch (Exception e) {
+        	 System.out.print(e);
           JOptionPane.showMessageDialog(null, "no se pudo consultar el producto\n"+e);
          }
          return miProducto;
