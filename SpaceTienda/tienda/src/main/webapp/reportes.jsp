@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Reportes | Tienda</title>
+    <title>REPORTES | Tienda</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 	
-	<!-- Importaci�n de ajax -->
+	<!-- Importacion de ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script>
  
@@ -93,8 +93,8 @@
 
 </head>
 
-  <body id="servicesPage">
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+  <body id="aboutPage">
+     <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
       <div class="container-fluid">
         <div class="row tm-brand-row">
           <div class="col-lg-4 col-11">
@@ -184,14 +184,14 @@
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box"> 
                                           
-                      <div class="col-lg-8">
+                      <div class="col-lg-12 text-centre">
                         <table id ="table" class="col-lg-12">
                           <thead class="thead-dark">
                             <tr>
-                              <th scope="col">Cedula</th>
+                              <th scope="col">C&eacute;dula</th>
                               <th scope="col">Correo</th>
                               <th scope="col">Nombre</th>
-                              <th scope="col">Contrase�a</th>
+                              <th scope="col">Contrase&ntilde;a</th>
                               <th scope="col">Usuario</th>
                            
                             </tr>	
@@ -219,11 +219,11 @@
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box"> 
                                             
-                      <div class="col-lg-8">
+                      <div class="col-lg-12 text-centre">
                         <table id ="table" class="col-lg-12">
                           <thead class="thead-dark">
                             <tr>
-                              <th scope="col">Cedula</th>
+                              <th scope="col">C&eacute;dula</th>
                               <th scope="col">Nombre</th>
                               <th scope="col">Direccion</th>
                               <th scope="col">Correo</th>
@@ -254,11 +254,11 @@
               <div class="col-lg-12">
                   <div class="tm-bg-white-transparent tm-app-feature-box">                       
                       
-                      <div class="col-lg-8">
+                      <div class="col-lg-12 text-centre">
                         <table id ="table" class="col-lg-12">
                           <thead class="thead-dark">
                             <tr>
-                              <th scope="col">Cedula Cliente</th>
+                              <th scope="col">C&eacute;dula Cliente</th>
                               <th scope="col">Nombre Cliente</th>
                               <th scope="col">Direccion</th>
                               <th scope="col">Correo</th>
@@ -276,24 +276,34 @@
       </section>
       
       <section class="row tm-testimonials-section">
-            <div class="col-12 tm-carousel">              
-                <div class="tm-bg-black-transparent tm-testimonial-box text-center">                    
+            <div class="col-12 tm-carousel">   
+            	<div class="tm-bg-black-transparent tm-testimonial-box text-center">
                   <div class="tm-person-img-container">
-                    <img src="img/person-1.png" alt="Image" class="img-fluid mx-auto"/>
+                    <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
                   </div>              
-                  <h3 class="tm-about-name tm-uppercase">Praesent ornare</h3>
+                  <h3 class="tm-about-name tm-uppercase">FELIPE BELLO</h3>
                   <p class="tm-about-description">
-                    Vestibulum semper dolor sed elit mattis placerat cursus sed ac urna. Mauris eget suscipit purus, id ullamcorper mi. Mauris eu velit semper turpis semper.
+                    Donec id ante nulla. Quisque vestibulum dapibus neque. Nam ex massa, fringilla ac tortor a, porta quismod mi. Maecenas gravida maximus ultrices.
                   </p>
-                </div>
-
+                </div>           
+                
                 <div class="tm-bg-black-transparent tm-testimonial-box text-center">
                   <div class="tm-person-img-container">
                     <img src="img/person-2.png" alt="Image" class="img-fluid mx-auto"/>
                   </div>              
-                  <h3 class="tm-about-name tm-uppercase">Maecenas Pretium</h3>
+                  <h3 class="tm-about-name tm-uppercase">LORENA ALZATE</h3>
                   <p class="tm-about-description">
                       Fusce pellenteqeue nunc sed orci mattis mattis. Etiam porttitor bibendum ligula eu saggittis. Duis lacus mi, tincidunt ut massa elementum, volutpat.
+                  </p>
+                </div>
+
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">                    
+                  <div class="tm-person-img-container">
+                    <img src="img/person-0.jpg" alt="Image" style="width: 180px" class="img-fluid mx-auto"/>
+                  </div>              
+                  <h3 class="tm-about-name tm-uppercase">AHMANSAVTHOR BATISTA</h3>
+                  <p class="tm-about-description">
+                    Estudiante del proyecto MinTic 2022, enfocado en el desarrollo profesional como desarrollador.
                   </p>
                 </div>
 
@@ -301,40 +311,20 @@
                   <div class="tm-person-img-container">
                     <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
                   </div>              
-                  <h3 class="tm-about-name tm-uppercase">Nulla Quis Magna</h3>
-                  <p class="tm-about-description">
-                    Donec id ante nulla. Quisque vestibulum dapibus neque. Nam ex massa, fringilla ac tortor a, porta quismod mi. Maecenas gravida maximus ultrices.
-                  </p>
-                </div>
-
-                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
-                  <div class="tm-person-img-container">
-                    <img src="img/person-1.png" alt="Image" class="img-fluid mx-auto"/>
-                  </div>              
-                  <h3 class="tm-about-name tm-uppercase">Praesent ornare</h3>
+                  <h3 class="tm-about-name tm-uppercase">JOSE BARRIOS</h3>
                   <p class="tm-about-description">
                     Vestibulum semper dolor sed elit placerat cursus sed ac urna. Mauris eget suscipit purus, id ullamcorper mi. Mauris eu velit semper turpis semper.
                   </p>
                 </div>    
                 <div class="tm-bg-black-transparent tm-testimonial-box text-center">
                   <div class="tm-person-img-container">
-                    <img src="img/person-2.png" alt="Image" class="img-fluid mx-auto"/>
+                    <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
                   </div>              
-                  <h3 class="tm-about-name tm-uppercase">Maecenas Pretium</h3>
+                  <h3 class="tm-about-name tm-uppercase">OSCAR BERMUDEZ</h3>
                   <p class="tm-about-description">
                       Fusce pellenteqeue nunc sed orci mattis mattis. Etiam porttitor bibendum ligula eu saggittis. Duis lacus mi, tincidunt ut massa elementum, volutpat.
                   </p>
-                </div>
-
-                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
-                  <div class="tm-person-img-container">
-                    <img src="img/person-3.png" alt="Image" class="img-fluid mx-auto"/>
-                  </div>              
-                  <h3 class="tm-about-name tm-uppercase">Nulla Quis Magna</h3>
-                  <p class="tm-about-description">
-                    Donec id ante nulla. Quisque vestibulum dapibus neque. Nam ex massa, fringilla ac tortor a, porta quismod mi. Maecenas gravida maximus ultrices.
-                  </p>
-                </div>          
+                </div>         
           </div>
         </section>
         

@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="CSS/all.min.css" />
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>    
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="CSS/templatemo-style.css" />
-
+    
     <!-- Importacion de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-
+	
+	<!-- Importacion de ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script>
@@ -111,19 +117,31 @@
                   <h2 class="text-uppercase mb-3 tm-app-feature-header">GESTI&Oacute;N DE PRODUCTOS</h2>
               </header>
           </div>
-<form class="form-inline">
-
-	<div class="form-group">
-
-		<input type="file" id="files" class="form-control" accept=".csv" required />
-	</div>
-
-	<div class="form-group">
-		<button type="submit" id="submit-file" class="btn btn-primary">CARGAR</button>
-	</div>
-	
-</form>
           
+          
+          <div class="row">
+            <div class="col-lg-12">
+                <div class="tm-bg-white-transparent tm-app-feature-box"> 
+                    
+                    <div class="col-lg-12">
+                    	<form class="form-inline text-center">			
+							<div class="form-group">
+								<input type="file" id="files" class="form-control" accept=".csv" required />
+							</div>
+						
+							<div class="form-group">
+								<button type="submit" id="submit-file" class="btn btn-primary">CARGAR</button>
+							</div>
+							
+						</form>
+                    </div>
+                    
+				</div>
+          	</div>
+          </div>
+          
+			
+          <!-- Selección de archivo de datos -->
           <div class="row">
             <div class="col-lg-12">
                 <div class="tm-bg-white-transparent tm-app-feature-box"> 
@@ -138,8 +156,8 @@
 		                  
 	                      <div class="row">
 		                      <div class="col-lg-6">
-		                         <div class="one-half"><label>C�digo Producto:</label> <br>                      
-		                          <input style= " margin:0px" type="text" id="Codigo" name="Codigo" placeholder= "C�digo" size="30"></div>
+		                         <div class="one-half"><label>C&oacute;digo Producto:</label> <br>                      
+		                          <input style= " margin:0px" type="text" id="Codigo" name="Codigo" placeholder= "C&oacute;digo" size="30"></div>
 		                      
 		                      	  <div class="one-half"><label>Nombre Producto:</label> <br>
 		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombre"></div>
@@ -163,10 +181,10 @@
 	                      </div>
 	                      
 	                      <div class="one-half last">
-	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarProducto(Codigo.value)" value="CONSULTAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarProducto()" value="CREAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarProducto()" value="ACTUALIZAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarProducto(Codigo.value)" value="BORRAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-primary" onclick="consultarProducto(Codigo.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-success" onclick="registrarProducto()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-secondary" onclick="editarProducto()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-danger" onclick="eliminarProducto(Codigo.value)" value="BORRAR"/>
 	                      </div>
 	                  
 	                  </div> 
@@ -175,76 +193,33 @@
             </div>
         </div>        
       </section>
-
-        <!-- About -->
-        <section class="row" id="tmAbout">
-          <header class="col-12 tm-about-header">
-            <h2 class="text-uppercase text-center text-dark tm-about-page-title">About this app</h2>
-            <hr class="tm-about-title-hr">
-          </header>
-          <div class="col-lg-4">
-            <div class="tm-bg-black-transparent tm-about-box">
-              <div class="tm-about-number-container">0.1</div>              
-              <h3 class="tm-about-name">Best Quality</h3>
-              <p class="tm-about-description">
-                Integer dapibus aliquam accumsan. Nam diam elit, mollis quis elit sed, hendrerit dapibus eros. Cras auctor laoreet tortor eget. BG #0F1D20
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="tm-bg-black-transparent tm-about-box">
-              <div class="tm-about-number-container">0.2</div>              
-              <h3 class="tm-about-name">Satisfaction</h3>
-              <p class="tm-about-description">
-                Parallo is a HTML landing page template based on Bootstrap v4.3.1 framework. Please tell your friends about TemplateMo.
-              </p>
-              <a href="#tmFeatures" class="btn btn-tertiary tm-btn-app-feature">More</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="tm-bg-black-transparent tm-about-box">
-              <div class="tm-about-number-container">0.3</div>              
-              <h3 class="tm-about-name">High Return</h3>
-              <p class="tm-about-description">
-                You are allowed to use this for commercial purpose or personal site.
-              </p>
-              <p class="tm-about-description">
-             	You are NOT allowed to redistribute this template on any download site or template collection sites.
-              </p>
-              <a href="#tmFeatures" class="btn btn-secondary tm-btn-app-feature">Details</a>
-            </div>
-          </div>
-        </section>
-
                 
       <!-- .container-fluid -->
     </div>
     
-    <!-- Page footer -->
-    <footer class="row">
-    	<div class="col-12 text-center text-white tm-bg-black-transparent p-0">
-	         <p class="col-12 text-center m-1">
-		         Copyright @ 2021 App Min-Tic. 
-		         Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
-		         <br/>
-		         <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
-		         <br/>
-		         Felipe Bello
-		         <br/>
-		         Lorena Alzate
-		         <br/>
-		         Oscar Bermudez
-		         <br/>
-		         Jose Barrios
-	       	 </p>
-        </div> 
-    </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	    <!-- Page footer -->
+	    <footer class="row">
+	    	<div class="col-12 text-center text-white tm-bg-black-transparent p-0">
+		         <p class="col-12 text-center m-1">
+			         Copyright @ 2021 App Min-Tic. 
+			         Desarrollo - <a href="#" class="tm-copyright-link">Inicio</a>
+			         <br/>
+			         <a href="http://www.tingcol.com" target="_blanck" class="tm-copyright-link">Ahmansavthor Batista</a>
+			         <br/>
+			         Felipe Bello
+			         <br/>
+			         Lorena Alzate
+			         <br/>
+			         Oscar Bermudez
+			         <br/>
+			         Jose Barrios
+		       	 </p>
+	        </div> 
+	    </footer>
+	
+	    <script src="js/jquery.min.js"></script>
+	    <script src="js/parallax.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
     </div>
   </body>
 </html>

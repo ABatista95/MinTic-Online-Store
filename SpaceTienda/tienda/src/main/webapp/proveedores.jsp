@@ -197,7 +197,7 @@ https://templatemo.com/tm-534-parallo
 		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
 		                          
 		                          <div class="one-half"><label>Direccion:</label> <br>
-		                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcci�n empresa" size="30"></div>
+		                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcci&oacute;n empresa" size="30"></div>
 
 		                      </div>
 		                      
@@ -212,10 +212,10 @@ https://templatemo.com/tm-534-parallo
 	                      </div>
 	                      
 	                      <div class="one-half last">
-	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarProveedor(NitProveedor.value)" value="CONSULTAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarProveedor()" value="CREAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarProveedor()" value="ACTUALIZAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarProveedor(NitProveedor.value)" value="BORRAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-primary" onclick="consultarProveedor(NitProveedor.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-success" onclick="registrarProveedor()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-secondary" onclick="editarProveedor()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-danger" onclick="eliminarProveedor(NitProveedor.value)" value="BORRAR"/>
 	                      </div>
 	                  
 	                  </div> 

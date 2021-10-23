@@ -187,8 +187,8 @@ https://templatemo.com/tm-534-parallo
 		                  
 	                      <div class="row">
 		                      <div class="col-lg-6">
-		                         <div class="one-half"><label>C�dula:</label> <br>                      
-		                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de c�dula" size="30"></div>
+		                         <div class="one-half"><label>C&eacute;dula:</label> <br>                      
+		                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula"placeholder= "Numero de c&eacute;dula" size="30"></div>
 		                      
 		                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
 		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
@@ -202,17 +202,17 @@ https://templatemo.com/tm-534-parallo
 		                          <div class="one-half last"><label>Usuario:</label> <br>
 		                          <input style= " margin:0px" type="text" id="Usuario" name="Usuario" placeholder= "Usuario" size="30"></div>
 		                                                                     
-		                          <div class="one-half last"><label>Contrase�a:</label> <br>
-		                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contrase�a" size="30"></div>
+		                          <div class="one-half last"><label>Contrase&ntilde;a:</label> <br>
+		                          <input style= " margin:0px" type="text" id="Password" name="Password" placeholder="Contrase&ntilde;a" size="30"></div>
 		                          
 		                      </div>
 	                      </div>
 	                      
 	                      <div class="one-half last">
-	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarUsuario(Cedula.value)" value="CONSULTAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarUsuario()" value="CREAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarUsuario()" value="ACTUALIZAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarUsuario(Cedula.value)" value="BORRAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-primary" onclick="consultarUsuario(Cedula.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-success" onclick="registrarUsuario()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-secondary" onclick="editarUsuario()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-danger" onclick="eliminarUsuario(Cedula.value)" value="BORRAR"/>
 	                      </div>
 	                  
 	                  </div> 

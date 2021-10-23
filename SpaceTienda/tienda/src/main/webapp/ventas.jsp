@@ -124,18 +124,20 @@
  				<div class="col-lg-12">
 					
 						<form class="in-line">
-						  	<div class="tm-bg-white-transparent tm-app-feature-box">
-							  	<fieldset>            
-								  	<legend>Datos del cliente</legend>                    
-								  	<label for="Cedula">C&eacute;dula:</label>
-								  	<input type="Cedula" id="Cedula" placeholder="N&uacute;mero de C&eacute;dula" name="Cedula">
-								  	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
-								  	<label for="Cliente">Cliente:</label>
-								  	<input type="Cliente" id="Cliente" placeholder="Nombre del cliente" name="Nombre">
-								  	<label for="Consecutivo">Consecutivo:</label>
-								  	<input type="Consecutivo" id="Consecutivo" placeholder="Consecutivo" name="Consecutivo">
-							  	</fieldset>
-							</div>
+						  	<section>
+						  		<div class="tm-bg-white-transparent tm-app-feature-box">
+								  	<fieldset>            
+									  	<legend>Datos del cliente</legend>                    
+									  	<label for="Cedula">C&eacute;dula:</label>
+									  	<input type="text" id="Cedula" placeholder="N&uacute;mero de C&eacute;dula" name="Cedula">
+									  	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
+									  	<label for="Cliente">Cliente:</label>
+									  	<input type="text" id="Cliente" style="width: 250px" placeholder="Nombre del cliente" name="Nombre">
+									  	<label for="Consecutivo">Consecutivo:</label>
+									  	<input type="text" id="Consecutivo" placeholder="Consecutivo" name="Consecutivo" disabled>
+								  	</fieldset>
+								</div>
+						  	</section>
 				  
 							<section>
 							  	<div class="tm-bg-white-transparent tm-app-feature-box">
@@ -147,114 +149,105 @@
 													<table>
 														<tr>
 															<td> 
-																<fieldset>Codigo Producto                
-																	<label for="Codigo"></label>
-																	<div class="col-12">
-																		<label for="Codigo"></label>
-																		<input type="text" id="Codigo" name="Codigo">
-																		<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
+																<fieldset>C&oacute;digo Producto 
+																	<div class="col"><label for="Codigo"></label></div>
+																	<input type="text" style="width: 150px" id="Codigo1" name="Codigo">
+																	<button type="button" style="margin:5px 5px" class="btn btn-secondary ">CONSULTAR</button>
 									  							</fieldset>
 									 						</td>
 															<td> 
 																<fieldset>Nombre Producto
-																  	<div class="col"><label for="Nombre"></label>
-																  	<input type="text" style="width: 200px" id="Nombre" name="Nombre"> 
+																  	<div class="col"><label for="Nombre"></label></div>
+																  	<input type="text" style="width: 300px; margin-right: 30px" id="Nombre1" name="Nombre1" disabled> 
 																</fieldset>
 															</td>
 															<td> 
-																<fieldset>
-																  Cant.
-																  <div class="col"><label for="Cant"></label>
-																  <input type="text" style="width: 100px" id="Cant" name="Cant"> 
+																<fieldset>Cant.
+																  <div class="col"><label for="Cant"></label></div>
+																  <input type="text" style="width: 100px" id="Cant1" name="Cant"> 
 																</fieldset>
 															</td>
 															<td> 
-																<fieldset>
-																  Vlr Total
-																  <div class="col"><label for="VlrTotal"></label>
-																  <input type="text" style="width: 150px" id="Vlrtotal1" name="VlrTotal1"> 
+																<fieldset>Vlr Total
+																  <div class="col"><label for="VlrTotal"></label></div>
+																  <input type="text" style="width: 150px" id="Vlrtotal1" name="VlrTotal1" disabled> 
 																</fieldset>
 															</td>
 														</tr>
 														<tr>
 															<td> 
-																<fieldset>            
-																	                 
-																	<label for="Codigo"></label>
-																	<div class="col-12"><label for="Codigo"></label>
-																	<input type="text" id="Codigo" name="Codigo">
+																<fieldset>         
+																	<div class="col-12"><label for="Codigo"></label></div>
+																	<input type="text" style="width: 150px" class="Codigo2" name="Codigo">
 																	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
 														  		</fieldset>
 														 	</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="Nombre"></label>
-																  <input type="text" style="width: 200px" id="Nombre" name="Nombre"> 
+																  <div class="col"><label for="Nombre"></label></div>
+																  <input type="text" style="width: 300px; margin-right: 30px" id="Nombre2" name="Nombre2" disabled> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="Cant"></label>
-																  <input type="text" style="width: 100px" id="Cant" name="Cant"> 
+																  <div class="col"><label for="Cant"></label></div>
+																  <input type="text" style="width: 100px" id="Cant2" name="Cant"> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="VlrTotal2"></label>
-																  <input type="text" style="width: 150px" id="Vlrtotal2" name="VlrTotal2"> 
+																  <div class="col"><label for="VlrTotal2"></label></div>
+																  <input type="text" style="width: 150px" id="Vlrtotal2" name="VlrTotal2" disabled> 
 																</fieldset>
 															</td>
 														</tr>
 														<tr>
 															<td> 
 																<fieldset>                
-																	<label for="Codigo"></label>
-																	<div class="col-12"><label for="Codigo"></label>
-																	<input type="text" id="Codigo" name="Codigo">
+																	<div class="col-12"><label for="Codigo"></label></div>
+																	<input type="text" style="width: 150px" class="Codigo3" name="Codigo">
 																	<button type="button" style= "margin:5px 5px" class="btn btn-secondary">CONSULTAR</button>
 													  			</fieldset>
 														 	</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="Nombre"></label>
-																  <input type="text" style="width: 200px" id="Nombre" name="Nombre"> 
+																  <div class="col"><label for="Nombre"></label></div>
+																  <input type="text" style="width: 300px; margin-right: 30px" id="Nombre3" name="Nombre3" disabled> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="Cant"></label>
-																  <input type="text" style="width: 100px" id="Cant" name="Cant"> 
+																  <div class="col"><label for="Cant"></label></div>
+																  <input type="text" style="width: 100px" id="Cant3" name="Cant"> 
 																</fieldset>
 															</td>
 															<td> 
 																<fieldset>
-																  <div class="col"><label for="VlrTotal3"></label>
-																  <input type="text" style="width: 150px" id="Vlrtotal3" name="VlrTotal3"> 
+																  <div class="col"><label for="VlrTotal3"></label></div>
+																  <input type="text" style="width: 150px" id="Vlrtotal3" name="VlrTotal3" disabled> 
 																</fieldset>
 															</td>	
 														</tr>
+														<tr></tr>
+														<tr></tr>
 														<tr>
 															<td></td>
 															<td></td>
-															<td>
-																<fieldset>Subtotal
-													  				<div class="col"><label for="TotalVenta"></label>
-													  				<input type="text" style="width: 150px" id="TotalVenta" name="TotalVenta"> 
+															<td colspan="2">
+																<fieldset style="margin: 5px 0px">Subtotal
+													  				<input type="text" style="width: 150px; margin-left: 13px;" id="TotalVenta" name="TotalVenta"> 
 																</fieldset>
-																<fieldset>Total IVA
-														  			<div class="col"><label for="TotalIVA"></label>
-														  			<input type="text" style="width: 150px" id="TotalIVA" name="TotalIVA"> 
+																<fieldset style="margin: 5px 0px">Total IVA
+														  			<input type="text" style="width: 150px; margin-left: 10px;" id="TotalIVA" name="TotalIVA"> 
 																</fieldset>
-																<fieldset>TOTAL
-														  			<div class="col"><label for="TotalVentaconIVA"></label>
-															  		<input type="text" style="width: 150px" id="TotalVentaconIva" name="TotalVentaconIva"> 
+																<fieldset style="margin: 5px 0px">TOTAL
+															  		<input type="text" style="width: 150px; margin-left: 28px;" id="TotalVentaconIva" name="TotalVentaconIva"> 
 																</fieldset>
 															</td>
 															<td>
 																<button type="button" class="btn btn-info">REGISTRAR</button>
 															</td>
 														</tr>
-														<tr></tr>
 													</table>
 												</form>
 						 					</div>

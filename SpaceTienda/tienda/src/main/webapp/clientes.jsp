@@ -191,14 +191,14 @@ https://templatemo.com/tm-534-parallo
 		                  
 	                      <div class="row">
 		                      <div class="col-lg-6">
-		                          <div class="one-half"><label>Cedula cliente</label> <br>                      
-		                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula" placeholder= "Cedula cliente" size="30"></div>
+		                          <div class="one-half"><label>C&eacute;dula cliente</label> <br>                      
+		                          <input style= " margin:0px" type="text" id="Cedula" name="Cedula" placeholder= "C&eacute;dula cliente" size="30"></div>
 		                      
 		                      	  <div class="one-half"><label>Nombre Completo:</label> <br>
 		                          <input style= " margin:0px" type="text" id="Nombre" name="Nombre" size="30" placeholder="Nombres y apellidos"></div>
 		                          
-		                          <div class="one-half"><label>Direcci�n:</label> <br>
-		                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcci�n cliente" size="30"></div>
+		                          <div class="one-half"><label>Direcci&oacute;n:</label> <br>
+		                          <input style= " margin:0px; padding 20px" type="text" id="Direccion" name="Direccion" placeholder="Direcci&oacute;n cliente" size="30"></div>
 
 		                      </div>
 		                      
@@ -207,16 +207,16 @@ https://templatemo.com/tm-534-parallo
 		                          <input style= " margin:0px" type="text" id="Correo" name="Correo" placeholder= "Correo cliente" size="30"></div>
 		                                                                     
 		                          <div class="one-half last"><label>Telefono contacto:</label> <br>
-		                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Telef�no" size="30"></div>
+		                          <input style= " margin:0px" type="text" id="Contacto" name="Contacto" placeholder="Tel&eacute;fono" size="30"></div>
 
 		                      </div>
 	                      </div>
 	                      
 	                      <div class="one-half last">
-	                          <input type="submit" style= " margin:15px 5px" class="btn btn-primary" onclick="consultarCliente(Cedula.value)" value="CONSULTAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-success" onclick="registrarCliente()" value="CREAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-secondary" onclick="editarCliente()" value="ACTUALIZAR"/>
-	                          <input type="submit" style= " margin:15px 3px" class="btn btn-danger" onclick="eliminarCliente(Cedula.value)" value="BORRAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-primary" onclick="consultarCliente(Cedula.value)" value="CONSULTAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-success" onclick="registrarCliente()" value="CREAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-secondary" onclick="editarCliente()" value="ACTUALIZAR"/>
+	                          <input type="submit" style= " margin:15px 3px; width: 124px;" class="btn btn-danger" onclick="eliminarCliente(Cedula.value)" value="BORRAR"/>
 	                      </div>
 	                  
 	                  </div> 
@@ -225,77 +225,6 @@ https://templatemo.com/tm-534-parallo
               </div>
           </div>        
       </section>
-
-
-        <!-- Services header -->
-        <section class="row" id="tmServices">
-           <div class="col-12 tm-tabs-container">
-              <div class="tm-tab-links">
-                    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                        <li><a href="#tab1" class="active ">
-                            <div class=""><i class="fas fa-2x fa-leaf"></i></div>
-                            Service Tab One                        
-                        </a></li>
-                        <li><a href="#tab2" class="">
-                            <div class="icon-wrap"><i class="fab fa-2x fa-canadian-maple-leaf"></i></div>
-                            Service Tab Two             
-                        </a></li>
-                        <li><a href="#tab3" class="">
-                            <div class="icon-wrap"><i class="fab fa-2x fa-pagelines"></i></div>
-                            Service Tab Three             
-                        </a></li>                    
-                    </ul>
-                </div>  
-                <div class="tm-tab-contents">
-                    <div id="first-tab-group" class="tabgroup">
-                        <div id="tab1">                            
-                            <div class="text-content">
-                                <h3 class="tm-service-tab-title">Service Tab One</h3>
-                                <p class="tm-service-tab-p">Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                                    ipsum quis suscipit lacinia. Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna.
-                                </p>                            
-                                <p class="mb-0">
-                                    Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue. Nulla convallis est volutpat ex ultrices facilisis.
-                                </p>
-                            </div>
-                        </div>
-                        <div id="tab2">
-                            <div class="text-content">
-                                <h3 class="tm-service-tab-title">Service Tab Two</h3>
-                                <p class="tm-service-tab-p">Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue. Nulla convallis est volutpat ex ultrices facilisis.                                
-                                </p>                            
-                                <p class="mb-0">
-                                    Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                                    ipsum quis suscipit lacinia. Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna.    
-                                </p>
-                            </div>
-                        </div>
-                        <div id="tab3">
-                            <div class="text-content">
-                                <h3 class="tm-service-tab-title">Service Tab Three</h3>
-                                <p class="tm-service-tab-p">Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna. Nulla convallis est volutpat ex ultrices facilisis.
-                                </p>                            
-                                <p class="mb-0">
-                                    Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                                    ipsum quis suscipit lacinia. Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue. 
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>     
-        </section>
 
       </div>
       <!-- .container-fluid -->
